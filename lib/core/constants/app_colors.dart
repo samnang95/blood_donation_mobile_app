@@ -1,19 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 class AppColors {
-  // grey
-  static const int grey50 = 0xf6f6f6;
-  static const int grey200 = 0xd1d1d1;
-  static const int grey400 = 0x888888;
-  static const int grey600 = 0x5d5d5d;
+  //black Color
+  static const darkColor = Color(0xff000000);
+  static const colorDarkSoftColor = Color(0x66000000);
 
-  // blue
-  static const int blue300 = 0x82d0f7;
-  static const int blue400 = 0x40b8f0;
-  static const int blue500 = 0x17a0e0;
-  static const int blue600 = 0x0a7ebd;
+  // Grey
+  static const Color grey50 = Color(0xFFF6F6F6);
+  static const Color grey200 = Color(0xFFD1D1D1);
+  static const Color grey400 = Color(0xFF888888);
+  static const Color grey600 = Color(0xFF5D5D5D);
 
-  // red
-  static const int red50 = 0xffefef;
-  static const int red200 = 0xffbfbf;
-  static const int red400 = 0xff5353;
-  static const int red600 = 0xff0000;
+  // Blue
+  static const Color blue300 = Color(0xFF82D0F7);
+  static const Color blue400 = Color(0xFF40B8F0);
+  static const Color blue500 = Color(0xFF17A0E0);
+  static const Color blue600 = Color(0xFF0A7EBD);
+
+  // Red
+  static const Color red50 = Color(0xFFFFEFEF);
+  static const Color red200 = Color(0xFFFFBFBF);
+  static const Color red400 = Color(0xFFFF5353);
+  static const Color red600 = Color(0xFFFF0000);
+
+  //white Color
+  static const colorWhite = Color(0xffFFFFFF);
+  static const backgroundColor = Color(0xffFAFAFA);
+  static const colorwhiteSmoke = Color(0xffF5F5F5);
 }
