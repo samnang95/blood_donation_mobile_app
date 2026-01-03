@@ -8,6 +8,6 @@ class XGradientColors {
   static const LinearGradient appBarGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [AppColors.blue400, AppColors.red200],
+    colors: [AppColors.blue400, AppColors.blue600],
   );
 }

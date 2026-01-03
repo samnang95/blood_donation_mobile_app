@@ -29,3 +29,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/translation/
+    - .env
+    - .env.development
+    - .env.staging
+    - .env.production

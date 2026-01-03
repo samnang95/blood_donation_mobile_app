@@ -16,7 +16,7 @@ class XContainer extends StatelessWidget {
     this.width,
     this.padding,
     this.backgroundColor = AppColors.backgroundColor,
-    this.borderColor = AppColors.blue500,
+    this.borderColor = AppColors.grey400,
     this.isShadow = true,
     required this.child,
   });
@@ -33,7 +33,7 @@ class XContainer extends StatelessWidget {
         boxShadow: [
           if (true)
             BoxShadow(
-              color: AppColors.grey200,
+              color: AppColors.grey600,
               blurRadius: 1,
               spreadRadius: 0.1,
             ),
