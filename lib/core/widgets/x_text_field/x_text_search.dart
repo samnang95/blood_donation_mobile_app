@@ -91,7 +91,7 @@ class _XTextSearchState extends State<XTextSearch> {
                 : null,
             child: Center(
               child: SvgPicture.asset(
-                _hasText ? AppIcons.password : AppIcons.icLogo,
+                _hasText ? AppIcons.icAvailableForDonate : AppIcons.icLogo,
                 width: iconSize,
                 height: iconSize,
               ),

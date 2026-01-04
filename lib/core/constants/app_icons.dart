@@ -1,5 +1,49 @@
 class AppIcons {
-  static const String icLogo = 'assets/svg/ic_logo.svg';
-  static const String password = 'assets/svg/ic-password.svg';
-  static const String search = 'assets/svg/ic-search.svg';
+  static const String icArrowLeft = 'assets/svg/ic-arrow-left.svg';
+  static const String icArrowRight = 'assets/svg/ic-arrow-right.svg';
+  static const String icAvailableForDonate =
+      'assets/svg/ic-availble-for-donate.svg';
+  static const String icBlood = 'assets/svg/ic-Blood.svg';
+  static const String icBloodDonation = 'assets/svg/ic-blood-donation.svg';
+  static const String icCall = 'assets/svg/ic-call.svg';
+  static const String icChinese = 'assets/svg/ic-Chinese.svg';
+  static const String icClipboard = 'assets/svg/ic-clipboard.svg';
+  static const String icDarkMode = 'assets/svg/ic-dark-mode.svg';
+  static const String icDate = 'assets/svg/ic-date.svg';
+  static const String icDonation = 'assets/svg/ic-donation.svg';
+  static const String icEdit = 'assets/svg/ic-edit.svg';
+  static const String icEmail = 'assets/svg/ic-email.svg';
+  static const String icEnglish = 'assets/svg/ic-English.svg';
+  static const String icEyeOff = 'assets/svg/ic-eye-off.svg';
+  static const String icFacebook = 'assets/svg/ic-facebook.svg';
+  static const String icFemale = 'assets/svg/ic-femal.svg';
+  static const String icGoogle = 'assets/svg/ic-google.svg';
+  static const String icHelp = 'assets/svg/ic-help.svg';
+  static const String icHome = 'assets/svg/ic-home.svg';
+  static const String icInvite = 'assets/svg/ic-Invite.svg';
+  static const String icKhmer = 'assets/svg/ic-Khmer.svg';
+  static const String icLanguage = 'assets/svg/ic-language.svg';
+  static const String icLanguage1 = 'assets/svg/ic-language-1.svg';
+  static const String icLocation = 'assets/svg/ic-location.svg';
+  static const String icLogin = 'assets/svg/ic-Login.svg';
+  static const String icLogo = 'assets/svg/ic-Logo.svg';
+  static const String icMale = 'assets/svg/ic-male.svg';
+  static const String icMapHospital = 'assets/svg/ic-map-hospital.svg';
+  static const String icMore = 'assets/svg/ic-More.svg';
+  static const String icNote = 'assets/svg/ic-note.svg';
+  static const String icNotificationLight =
+      'assets/svg/ic-notification-light.svg';
+  static const String icPassword = 'assets/svg/ic-password.svg';
+  static const String icPolicy = 'assets/svg/ic-policy.svg';
+  static const String icProfile = 'assets/svg/ic-profile.svg';
+  static const String icProfileFill = 'assets/svg/ic-profile-fill.svg';
+  static const String icRequest = 'assets/svg/ic-request.svg';
+  static const String icSearch = 'assets/svg/ic-search.svg';
+  static const String icSetting = 'assets/svg/ic-setting.svg';
+  static const String icShare = 'assets/svg/ic-share.svg';
+  static const String icSigUp = 'assets/svg/ic-signup.svg';
+  static const String icSignOut = 'assets/svg/ic-signout.svg';
+  static const String icStar = 'assets/svg/ic-star.svg';
+  static const String icTime = 'assets/svg/ic-time.svg';
+  static const String icLogoM = 'assets/svg/ic-logo-m.svg';
 }

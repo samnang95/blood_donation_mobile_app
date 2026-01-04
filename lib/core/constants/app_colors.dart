@@ -27,5 +27,4 @@ class AppColors {
   //white Color
   static const colorWhite = Color(0xffFFFFFF);
   static const backgroundColor = Color(0xffFAFAFA);
-  static const colorwhiteSmoke = Color(0xffF5F5F5);
 }
