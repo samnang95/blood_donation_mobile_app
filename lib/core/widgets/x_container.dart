@@ -30,8 +30,9 @@ class XContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: borderColor ?? Colors.transparent, width: 1),
         boxShadow: [
-          if (true)
+          if (isShadow)
             BoxShadow(
               color: AppColors.grey600,
               blurRadius: 1,
