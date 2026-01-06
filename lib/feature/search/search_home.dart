@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 import '../../core/widgets/x_card/x_card_find_donor.dart';
 import '../../core/widgets/x_text_field/x_text_research.dart';
-import 'search_controller.dart' as search;
+import 'search_controller.dart';
 
-class SearchHome extends GetView<search.SearchController> {
+class SearchHome extends GetView<DonorSearchController> {
   const SearchHome({super.key});
 
   @override
