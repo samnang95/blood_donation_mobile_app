@@ -1,53 +1,54 @@
 import 'package:get/get.dart';
 
-import '../../data/x_model_request_donation.dart';
+import '../../data/x_model_donation_request.dart';
 
-class RequestDonationController extends GetxController {
-  RxList<XModelRequestDonation> requestDonation = <XModelRequestDonation>[].obs;
+class DonationRequestController extends GetxController {
+  RxList<XModelDonationRequest> donationRequests =
+      <XModelDonationRequest>[].obs;
   @override
   void onInit() {
     super.onInit();
-    requestDonation.addAll([
-      XModelRequestDonation(
+    donationRequests.addAll([
+      XModelDonationRequest(
         name: "John Doe",
         location: "New York, NY",
         timeAgo: "2 Hours Ago",
-        status: "Pending",
+        status: null,
         bloodType: "A+",
       ),
-      XModelRequestDonation(
+      XModelDonationRequest(
         name: "Jane Smith",
         location: "Los Angeles, CA",
         timeAgo: "4 Hours Ago",
-        status: "Completed",
+        status: null,
         bloodType: "O-",
       ),
-      XModelRequestDonation(
+      XModelDonationRequest(
         name: "Bob Johnson",
         location: "Chicago, IL",
         timeAgo: "1 Day Ago",
-        status: "Pending",
+        status: null,
         bloodType: "B+",
       ),
-      XModelRequestDonation(
+      XModelDonationRequest(
         name: "Alice Brown",
         location: "Houston, TX",
         timeAgo: "3 Hours Ago",
-        status: "Pending",
+        status: null,
         bloodType: "AB+",
       ),
-      XModelRequestDonation(
+      XModelDonationRequest(
         name: "Charlie Wilson",
         location: "Phoenix, AZ",
         timeAgo: "5 Hours Ago",
         status: null,
         bloodType: "A-",
       ),
-      XModelRequestDonation(
+      XModelDonationRequest(
         name: "Diana Lee",
         location: "Philadelphia, PA",
         timeAgo: "2 Days Ago",
-        status: "Pending",
+        status: null,
         bloodType: "B-",
       ),
     ]);
