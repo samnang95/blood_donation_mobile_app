@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../feature/home/home_page.dart';
+import '../routes/app_routes.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});
@@ -20,7 +20,8 @@ class RootApp extends StatelessWidget {
       // darkTheme: AppThemes.darkTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      home: HomePage(),
+      initialRoute: AppRoutes.home,
+      getPages: AppRoutes.routes,
     );
   }
 }

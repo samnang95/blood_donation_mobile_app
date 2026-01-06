@@ -62,7 +62,7 @@ class XAppBar extends StatelessWidget {
               XTextMedium(
                 text: title,
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
 

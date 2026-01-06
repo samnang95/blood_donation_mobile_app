@@ -7,4 +7,6 @@ class AppImages {
   static const String report = 'assets/images/report.png';
   static const String search = 'assets/images/search.png';
   static const String img = 'assets/images/img.png';
+  static const String mapHospital = 'assets/images/map-hospital.png';
+  static const String textSearch = 'assets/images/text-search.png';
 }

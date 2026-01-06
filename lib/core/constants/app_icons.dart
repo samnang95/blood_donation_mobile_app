@@ -46,4 +46,6 @@ class AppIcons {
   static const String icStar = 'assets/svg/ic-star.svg';
   static const String icTime = 'assets/svg/ic-time.svg';
   static const String icLogoM = 'assets/svg/ic-logo-m.svg';
+  static const String icImage = 'assets/svg/ic-image.svg';
+  static const String icMapLocation = 'assets/svg/ic-map-location.svg';
 }
