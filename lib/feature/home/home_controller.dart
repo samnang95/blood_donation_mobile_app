@@ -4,49 +4,51 @@ import '../../data/x_model_donation_request.dart';
 import '../../data/x_model_request_donation.dart';
 
 class HomeController extends GetxController {
-  RxList<DonationRequest> donationRequests = <DonationRequest>[].obs;
-  RxList<RequestDonation> requestsDonation = <RequestDonation>[].obs;
+  RxList<XModelDonationRequest> donationRequests =
+      <XModelDonationRequest>[].obs;
+  RxList<XModelRequestDonation> requestsDonation =
+      <XModelRequestDonation>[].obs;
 
   @override
   void onInit() {
     super.onInit();
     donationRequests.addAll([
-      DonationRequest(
+      XModelDonationRequest(
         name: "John Doe",
         location: "New York, NY",
         timeAgo: "2 Hours Ago",
         status: "Pending",
         bloodType: "A+",
       ),
-      DonationRequest(
+      XModelDonationRequest(
         name: "Jane Smith",
         location: "Los Angeles, CA",
         timeAgo: "4 Hours Ago",
         status: "Urgent",
         bloodType: "O-",
       ),
-      DonationRequest(
+      XModelDonationRequest(
         name: "Bob Johnson",
         location: "Chicago, IL",
         timeAgo: "1 Day Ago",
         status: "Pending",
         bloodType: "B+",
       ),
-      DonationRequest(
+      XModelDonationRequest(
         name: "Alice Brown",
         location: "Houston, TX",
         timeAgo: "3 Hours Ago",
         status: "Pending",
         bloodType: "AB+",
       ),
-      DonationRequest(
+      XModelDonationRequest(
         name: "Charlie Wilson",
         location: "Phoenix, AZ",
         timeAgo: "5 Hours Ago",
         status: "Urgent",
         bloodType: "A-",
       ),
-      DonationRequest(
+      XModelDonationRequest(
         name: "Diana Lee",
         location: "Philadelphia, PA",
         timeAgo: "2 Days Ago",
@@ -56,42 +58,42 @@ class HomeController extends GetxController {
     ]);
 
     requestsDonation.addAll([
-      RequestDonation(
+      XModelRequestDonation(
         name: "John Doe",
         location: "New York, NY",
         timeAgo: "2 Hours Ago",
         status: "Pending",
         bloodType: "A+",
       ),
-      RequestDonation(
+      XModelRequestDonation(
         name: "Jane Smith",
         location: "Los Angeles, CA",
         timeAgo: "4 Hours Ago",
         status: "Urgent",
         bloodType: "O-",
       ),
-      RequestDonation(
+      XModelRequestDonation(
         name: "Bob Johnson",
         location: "Chicago, IL",
         timeAgo: "1 Day Ago",
         status: "Pending",
         bloodType: "B+",
       ),
-      RequestDonation(
+      XModelRequestDonation(
         name: "Alice Brown",
         location: "Houston, TX",
         timeAgo: "3 Hours Ago",
         status: "Pending",
         bloodType: "AB+",
       ),
-      RequestDonation(
+      XModelRequestDonation(
         name: "Charlie Wilson",
         location: "Phoenix, AZ",
         timeAgo: "5 Hours Ago",
         status: "Urgent",
         bloodType: "A-",
       ),
-      RequestDonation(
+      XModelRequestDonation(
         name: "Diana Lee",
         location: "Philadelphia, PA",
         timeAgo: "2 Days Ago",
