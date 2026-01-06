@@ -8,7 +8,7 @@ class XCardDonationRequest extends StatelessWidget {
   final String name;
   final String location;
   final String timeAgo;
-  final String status;
+  final String? status;
   final String bloodType;
   final VoidCallback? onAccept;
   final VoidCallback? onReject;
@@ -18,7 +18,7 @@ class XCardDonationRequest extends StatelessWidget {
     required this.name,
     required this.location,
     required this.timeAgo,
-    required this.status,
+    this.status,
     required this.bloodType,
     this.onAccept,
     this.onReject,
@@ -33,7 +33,7 @@ class XCardDonationRequest extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: AppColors.grey600.withOpacity(0.07),
+            color: AppColors.grey600.withValues(alpha: 0.07),
             blurRadius: 4,
             offset: const Offset(0, 4),
           ),
@@ -95,44 +95,53 @@ class XCardDonationRequest extends StatelessWidget {
           /// TIME
           _labelRow(AppIcons.icTime, "Time"),
           const SizedBox(height: 2),
-          Text(timeAgo, style: const TextStyle(fontSize: 14)),
-
-          const SizedBox(height: 8),
-
-          /// ACTIONS
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                status,
-                style: const TextStyle(
-                  color: Colors.amber,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 12,
-                ),
-              ),
+              Text(timeAgo, style: const TextStyle(fontSize: 12)),
+              status != null
+                  ? Text(
+                      status!,
+                      style: TextStyle(
+                        color: status == "Pending"
+                            ? AppColors.orange500
+                            : status == "Completed"
+                            ? AppColors.green500
+                            : AppColors.orange500,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                      ),
+                    )
+                  : const SizedBox(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: onReject,
-                    child: const Text(
-                      "Cancel",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w600,
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: onReject,
+                        child: const Text(
+                          "Reject",
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  GestureDetector(
-                    onTap: onAccept,
-                    child: const Text(
-                      "Accept",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w600,
+                      const SizedBox(width: 26),
+                      GestureDetector(
+                        onTap: onAccept,
+                        child: const Text(
+                          "Accept",
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),

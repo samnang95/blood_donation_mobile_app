@@ -9,6 +9,8 @@ class XScaffold extends StatelessWidget {
   final Widget? body;
   final Widget? bottomNavigationBar;
   final VoidCallback? onNotificationTap;
+  final Widget? backIcone;
+  final VoidCallback? onBackTap;
 
   const XScaffold({
     super.key,
@@ -16,6 +18,8 @@ class XScaffold extends StatelessWidget {
     this.body,
     this.bottomNavigationBar,
     this.onNotificationTap,
+    this.backIcone,
+    this.onBackTap,
   });
 
   @override
@@ -24,7 +28,12 @@ class XScaffold extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
-        child: XAppBar(title: title, onNotificationTap: onNotificationTap),
+        child: XAppBar(
+          title: title,
+          onNotificationTap: onNotificationTap,
+          backIcone: backIcone,
+          onBackTap: onBackTap,
+        ),
       ),
       body: body,
       bottomNavigationBar: bottomNavigationBar,
@@ -37,19 +46,22 @@ class XAppBar extends StatelessWidget {
   final String title;
   final VoidCallback? onNotificationTap;
   final FontWeight? fontWeight;
+  final Widget? backIcone;
+  final VoidCallback? onBackTap;
 
   const XAppBar({
     super.key,
     required this.title,
     this.onNotificationTap,
     this.fontWeight,
+    this.backIcone,
+    this.onBackTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      // decoration: const BoxDecoration(gradient: XGradientColors.appBarGradient),
       color: AppColors.bgscafold,
       child: SafeArea(
         bottom: false,
@@ -58,15 +70,28 @@ class XAppBar extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              /// Title (Home)
-              XTextMedium(
-                text: title,
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
+              /// Back Icon (optional)
+              if (backIcone != null) ...[
+                GestureDetector(
+                  onTap:
+                      onBackTap ??
+                      () {
+                        print('Back tapped');
+                      },
+                  child: backIcone!,
+                ),
+                const SizedBox(width: 12),
+              ],
 
-              const Spacer(),
+              /// Title
+              Expanded(
+                child: XTextMedium(
+                  text: title,
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: fontWeight ?? FontWeight.w600,
+                ),
+              ),
 
               /// Notification Icon
               IconButton(

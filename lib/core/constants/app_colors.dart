@@ -26,4 +26,10 @@ class AppColors {
   //white Color
   static const colorWhite = Color(0xffFFFFFF);
   static const backgroundColor = Color(0xffFAFAFA);
+
+  // Green
+  static const Color green500 = Color(0xFF00C717);
+
+  // Orange
+  static const Color orange500 = Color(0xFFE69500);
 }

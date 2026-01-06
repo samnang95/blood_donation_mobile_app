@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../core/constants/app_images.dart';
 
-class SearchController extends GetxController {
+class DonorSearchController extends GetxController {
   RxList<Map<String, dynamic>> donors = <Map<String, dynamic>>[].obs;
 
   @override
