@@ -1,6 +1,6 @@
-import 'package:blood_donation_mobile_app/core/constants/app_colors.dart';
-import 'package:blood_donation_mobile_app/core/widgets/x_container.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/app_colors.dart';
 
 class XButton extends StatelessWidget {
   final String text;
@@ -12,7 +12,7 @@ class XButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
-    this.backgroundColor,
+    this.backgroundColor = AppColors.bgscafold,
     this.textColor,
   });
 
@@ -20,9 +20,14 @@ class XButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: XContainer(
+      child: Container(
         height: 50,
-        backgroundColor: backgroundColor ?? AppColors.red50,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(8),
+          // border: const Border.fromBorderSide(),
+        ),
         child: Center(
           child: Text(
             text,

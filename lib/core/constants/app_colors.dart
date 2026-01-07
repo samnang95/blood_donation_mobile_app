@@ -22,6 +22,8 @@ class AppColors {
   static const Color red200 = Color(0xFFFFBFBF);
   static const Color red400 = Color(0xFFFF5353);
   static const Color red600 = Color(0xFFFF0000);
+  // Pink-Red
+  static const Color bgButton = Color(0xFFEC334C);
 
   //white Color
   static const colorWhite = Color(0xffFFFFFF);

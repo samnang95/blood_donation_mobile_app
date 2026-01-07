@@ -32,12 +32,14 @@ class XCardFindDonor extends StatelessWidget {
         border: Border(
           bottom: BorderSide(color: AppColors.grey200, width: 1),
           left: BorderSide(color: AppColors.grey200, width: 1),
+          right: BorderSide(color: AppColors.grey200, width: 1),
+          top: BorderSide(color: AppColors.grey200, width: 1),
         ),
         boxShadow: [
           BoxShadow(
             color: AppColors.darkColor.withValues(alpha: 0.03),
             blurRadius: 2,
-            offset: const Offset(0, 4),
+            // offset: const Offset(0, 4),
           ),
         ],
       ),

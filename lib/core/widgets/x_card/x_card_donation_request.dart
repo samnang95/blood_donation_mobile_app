@@ -35,7 +35,7 @@ class XCardDonationRequest extends StatelessWidget {
           BoxShadow(
             color: AppColors.grey600.withValues(alpha: 0.07),
             blurRadius: 4,
-            offset: const Offset(0, 4),
+            // offset: const Offset(0, 4),
           ),
         ],
       ),
