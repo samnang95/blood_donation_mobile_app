@@ -9,4 +9,9 @@ class AppImages {
   static const String img = 'assets/images/img.png';
   static const String mapHospital = 'assets/images/map-hospital.png';
   static const String textSearch = 'assets/images/text-search.png';
+  static const String blood = 'assets/images/blood.png';
+  static const String location = 'assets/images/location.png';
+  static const String person = 'assets/images/person.png';
+  static const String call = 'assets/images/call.png';
+  static const String note = 'assets/images/note.png';
 }
