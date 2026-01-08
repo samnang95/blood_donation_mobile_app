@@ -13,6 +13,7 @@ class SearchHome extends GetView<DonorSearchController> {
   Widget build(BuildContext context) {
     return XScaffold(
       title: 'Find Donors',
+      onNotificationTap: () {},
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

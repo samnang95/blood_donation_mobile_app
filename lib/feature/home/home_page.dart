@@ -4,8 +4,7 @@ import 'package:blood_donation_mobile_app/feature/home/widgets/home_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/constants/app_colors.dart';
-import '../../core/widgets/x_button/x_button_arrow.dart';
+import '../../core/widgets/x_button/x_button_back.dart';
 import '../../core/widgets/x_card/x_card_donation_request.dart';
 import '../../core/widgets/x_scaffold.dart';
 
@@ -17,6 +16,7 @@ class HomePage extends GetView<HomeController> {
     return XScaffold(
       title: 'Home',
       onNotificationTap: () {},
+      onBackTap: () {},
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -39,7 +39,14 @@ class HomePage extends GetView<HomeController> {
                 onReportTap: () {},
               ),
               const SizedBox(height: 20),
-              _title(text: "Requests Donation"),
+              XButtonBack(
+                text: "Requests Donation",
+                size: 30, // Background size
+                iconSize: 16, // Icon size
+                onTap: () {
+                  Get.toNamed('/request-donation');
+                },
+              ),
               const SizedBox(height: 20),
               Obx(
                 () => ListView.builder(
@@ -63,7 +70,14 @@ class HomePage extends GetView<HomeController> {
                   },
                 ),
               ),
-              _title(text: "Donation Requests"),
+              XButtonBack(
+                text: "Donation Requests",
+                size: 30, // Background size
+                iconSize: 16, // Icon size
+                onTap: () {
+                  Get.toNamed('/donation-request');
+                },
+              ),
               const SizedBox(height: 20),
               Obx(
                 () => ListView.builder(
@@ -95,20 +109,23 @@ class HomePage extends GetView<HomeController> {
   }
 }
 
-Widget _title({required String text, Color color = AppColors.grey600}) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-        text,
-        style: TextStyle(
-          fontSize: 16,
-          color: color,
-          fontWeight: FontWeight.w600, // Semibold
-        ),
-      ),
-      XButtonArrow(),
-      // SvgPicture.asset(AppIcons.icArrowRight, height: 24, width: 24),
-    ],
-  );
-}
+// Widget _title({
+//   required String text,
+//   Color color = AppColors.grey600,
+//   VoidCallback? onTap,
+// }) {
+//   return Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Text(
+//         text,
+//         style: TextStyle(
+//           fontSize: 16,
+//           color: color,
+//           fontWeight: FontWeight.w600, // Semibold
+//         ),
+//       ),
+//       XButtonArrow(),
+//     ],
+//   );
+// }

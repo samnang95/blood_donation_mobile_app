@@ -13,6 +13,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return XScaffold(
       title: "Profile",
+      onNotificationTap: () {},
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

@@ -1,11 +1,12 @@
-import 'package:blood_donation_mobile_app/feature/donation_request/donation_request_page.dart';
 import 'package:blood_donation_mobile_app/feature/home/home_page.dart';
 import 'package:blood_donation_mobile_app/feature/profile/profile_page.dart';
 import 'package:blood_donation_mobile_app/feature/search/search_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_images.dart';
+import '../report/report_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -20,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> pages = [
     const HomePage(),
     const SearchHome(),
-    const DonationRequestPage(),
+    const ReportPage(),
     const ProfilePage(),
   ];
 
@@ -36,6 +37,7 @@ class _MainPageState extends State<MainPage> {
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,
+          backgroundColor: AppColors.backgroundColor,
           items: const [
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage(AppImages.homeNav)),
