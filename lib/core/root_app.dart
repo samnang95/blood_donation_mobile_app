@@ -1,5 +1,8 @@
 import 'package:blood_donation_mobile_app/core/constants/app_config.dart';
+import 'package:blood_donation_mobile_app/feature/donation_request/donation_request_controller.dart';
 import 'package:blood_donation_mobile_app/feature/home/home_controller.dart';
+import 'package:blood_donation_mobile_app/feature/profile/profile_controller.dart';
+import 'package:blood_donation_mobile_app/feature/search/search_controller.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +15,9 @@ class RootApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
+    Get.put(DonorSearchController());
+    Get.put(DonationRequestController());
+    Get.put(ProfileController());
     return GetMaterialApp(
       title: AppConfig.APP_NAME,
       supportedLocales: context.supportedLocales,
@@ -20,7 +26,7 @@ class RootApp extends StatelessWidget {
       // darkTheme: AppThemes.darkTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.main,
       getPages: AppRoutes.routes,
     );
   }

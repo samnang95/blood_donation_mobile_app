@@ -10,7 +10,7 @@ class XButtonBack extends StatelessWidget {
   const XButtonBack({
     super.key,
     this.onTap,
-    this.size = 48,
+    this.size = 36,
     this.backgroundColor = Colors.white,
     this.iconColor = Colors.black,
     this.borderRadius = 12,

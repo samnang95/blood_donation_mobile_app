@@ -41,11 +41,12 @@ class XCardNotication extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.grey200, // background color
                   shape: BoxShape.circle, // makes it a circle
+                  // border: Border.all(color: AppColors.grey200, width: 1),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.05),
                       blurRadius: 4,
-                      offset: const Offset(0, 2),
+                      // offset: const Offset(0, 2),
                     ),
                   ],
                 ),

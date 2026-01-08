@@ -32,7 +32,9 @@ class HomePage extends GetView<HomeController> {
               ),
               const SizedBox(height: 20),
               HomeMenu(
-                onFindDonorsTap: () {},
+                onFindDonorsTap: () {
+                  Get.toNamed('/search');
+                },
                 onRequestBloodTap: () {},
                 onReportTap: () {},
               ),

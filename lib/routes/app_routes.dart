@@ -1,4 +1,5 @@
 import 'package:blood_donation_mobile_app/feature/detail/detail_page.dart';
+import 'package:blood_donation_mobile_app/feature/main/main_page.dart';
 import 'package:blood_donation_mobile_app/feature/profile/profile_binding.dart';
 import 'package:blood_donation_mobile_app/feature/search/search_binding.dart';
 import 'package:blood_donation_mobile_app/feature/search/search_home.dart';
@@ -14,6 +15,7 @@ import '../feature/request_donation/request_donation_binding.dart';
 import '../feature/request_donation/request_donation_page.dart';
 
 class AppRoutes {
+  static const String main = '/main';
   static const String home = '/home';
   static const String search = '/search';
   static const String requestDonation = '/request-donation';
@@ -21,6 +23,7 @@ class AppRoutes {
   static const String detail = '/detail';
   static const String prfile = '/profile';
   static final routes = [
+    GetPage(name: main, page: () => const MainPage()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
     GetPage(name: search, page: () => SearchHome(), binding: SearchBinding()),
     GetPage(

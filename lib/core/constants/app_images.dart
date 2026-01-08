@@ -22,4 +22,10 @@ class AppImages {
   static const String noteList = 'assets/images/note_list.png';
   static const String personList = 'assets/images/person_list.png';
   static const String button = 'assets/images/button.png';
+
+  // Icone for bottom navigation
+  static const String homeNav = 'assets/images/home_nav.png';
+  static const String findDonorsNav = 'assets/images/find-donors_nav.png';
+  static const String reportNav = 'assets/images/report_nav.png';
+  static const String profileNav = 'assets/images/profile_nav.png';
 }

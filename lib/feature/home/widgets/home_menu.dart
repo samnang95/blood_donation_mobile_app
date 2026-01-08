@@ -135,8 +135,8 @@ class _HomeMenuState extends State<HomeMenu> {
                 title,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
