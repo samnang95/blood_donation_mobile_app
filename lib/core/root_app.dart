@@ -20,7 +20,7 @@ class RootApp extends StatelessWidget {
       // darkTheme: AppThemes.darkTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.search,
+      initialRoute: AppRoutes.home,
       getPages: AppRoutes.routes,
     );
   }
