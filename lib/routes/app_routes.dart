@@ -11,6 +11,8 @@ import '../feature/donation_request/donation_request_page.dart';
 import '../feature/home/home_binding.dart';
 import '../feature/home/home_page.dart';
 import '../feature/profile/profile_page.dart';
+import '../feature/report/report_binding.dart';
+import '../feature/report/report_page.dart';
 import '../feature/request_donation/request_donation_binding.dart';
 import '../feature/request_donation/request_donation_page.dart';
 
@@ -22,6 +24,7 @@ class AppRoutes {
   static const String donationRequest = '/donation-request';
   static const String detail = '/detail';
   static const String prfile = '/profile';
+  static const String report = '/report';
   static final routes = [
     GetPage(name: main, page: () => const MainPage()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -38,5 +41,6 @@ class AppRoutes {
     ),
     GetPage(name: detail, page: () => DetailPage(), binding: DetailBinding()),
     GetPage(name: prfile, page: () => ProfilePage(), binding: ProfileBinding()),
+    GetPage(name: report, page: () => ReportPage(), binding: ReportBinding()),
   ];
 }

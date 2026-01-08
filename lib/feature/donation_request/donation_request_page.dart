@@ -1,4 +1,3 @@
-import 'package:blood_donation_mobile_app/core/widgets/x_scaffold.dart';
 import 'package:blood_donation_mobile_app/feature/donation_request/donation_request_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../core/constants/app_icons.dart';
 import '../../core/widgets/x_card/x_card_donation_request.dart';
+import '../../core/widgets/x_scaffold.dart';
 
 class DonationRequestPage extends GetView<DonationRequestController> {
   const DonationRequestPage({super.key});
@@ -14,6 +14,9 @@ class DonationRequestPage extends GetView<DonationRequestController> {
   Widget build(BuildContext context) {
     return XScaffold(
       title: "Donation Requests",
+      onBackTap: () {
+        Get.back();
+      },
       backIcone: SvgPicture.asset(AppIcons.icArrowLeft, color: Colors.white),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
