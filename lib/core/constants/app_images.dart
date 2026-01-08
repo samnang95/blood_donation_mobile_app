@@ -14,4 +14,12 @@ class AppImages {
   static const String person = 'assets/images/person.png';
   static const String call = 'assets/images/call.png';
   static const String note = 'assets/images/note.png';
+  static const String profileImages = 'assets/images/profile_images.png';
+  static const String callImages = 'assets/images/call_images.png';
+  static const String signOut = 'assets/images/sign_out.png';
+  static const String setting = 'assets/images/setting.png';
+  static const String add = 'assets/images/add.png';
+  static const String noteList = 'assets/images/note_list.png';
+  static const String personList = 'assets/images/person_list.png';
+  static const String button = 'assets/images/button.png';
 }
