@@ -1,19 +1,23 @@
 import 'package:blood_donation_mobile_app/core/constants/app_colors.dart';
 import 'package:blood_donation_mobile_app/core/constants/app_images.dart';
 import 'package:blood_donation_mobile_app/core/widgets/x_scaffold.dart';
+import 'package:blood_donation_mobile_app/feature/profile/profile_controller.dart';
 import 'package:blood_donation_mobile_app/feature/profile/widgets/profile_image.dart';
 import 'package:blood_donation_mobile_app/feature/profile/widgets/profile_list.dart';
 import 'package:blood_donation_mobile_app/feature/profile/widgets/profile_state.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends GetView<ProfileController> {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return XScaffold(
       title: "Profile",
-      onNotificationTap: () {},
+      onNotificationTap: () {
+        Get.toNamed('/notification');
+      },
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

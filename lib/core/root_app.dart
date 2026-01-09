@@ -16,8 +16,6 @@ class RootApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomeController());
     Get.put(DonorSearchController());
-    // Get.put(DonationRequestController());
-    // Get.put(RequestDonationController());
     Get.put(ReportController());
     Get.put(ProfileController());
     return GetMaterialApp(

@@ -17,7 +17,10 @@ class DonationRequestPage extends GetView<DonationRequestController> {
       onBackTap: () {
         Get.back();
       },
-      backIcone: SvgPicture.asset(AppIcons.icArrowLeft, color: Colors.white),
+      backIcone: SvgPicture.asset(
+        AppIcons.icArrowLeft,
+        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Obx(

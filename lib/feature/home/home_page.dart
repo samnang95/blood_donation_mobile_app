@@ -15,7 +15,9 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return XScaffold(
       title: 'Home',
-      onNotificationTap: () {},
+      onNotificationTap: () {
+        Get.toNamed('/notification');
+      },
       onBackTap: () {},
       body: SingleChildScrollView(
         child: Padding(

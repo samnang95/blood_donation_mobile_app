@@ -10,6 +10,8 @@ import '../feature/donation_request/donation_request_binding.dart';
 import '../feature/donation_request/donation_request_page.dart';
 import '../feature/home/home_binding.dart';
 import '../feature/home/home_page.dart';
+import '../feature/noification/notification_binding.dart';
+import '../feature/noification/notification_page.dart';
 import '../feature/profile/profile_page.dart';
 import '../feature/report/report_binding.dart';
 import '../feature/report/report_page.dart';
@@ -25,6 +27,7 @@ class AppRoutes {
   static const String detail = '/detail';
   static const String prfile = '/profile';
   static const String report = '/report';
+  static const String notification = '/notification';
   static final routes = [
     GetPage(name: main, page: () => const MainPage()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -42,5 +45,10 @@ class AppRoutes {
     GetPage(name: detail, page: () => DetailPage(), binding: DetailBinding()),
     GetPage(name: prfile, page: () => ProfilePage(), binding: ProfileBinding()),
     GetPage(name: report, page: () => ReportPage(), binding: ReportBinding()),
+    GetPage(
+      name: notification,
+      page: () => NotificationPage(),
+      binding: NotificationBinding(),
+    ),
   ];
 }

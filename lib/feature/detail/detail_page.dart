@@ -16,7 +16,10 @@ class DetailPage extends GetView<DetailController> {
   Widget build(BuildContext context) {
     return XScaffold(
       title: "Lorn Polin Detail",
-      backIcone: SvgPicture.asset(AppIcons.icArrowLeft, color: Colors.white),
+      backIcone: SvgPicture.asset(
+        AppIcons.icArrowLeft,
+        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 16.0,
