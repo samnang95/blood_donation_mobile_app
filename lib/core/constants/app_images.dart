@@ -28,4 +28,5 @@ class AppImages {
   static const String findDonorsNav = 'assets/images/find-donors_nav.png';
   static const String reportNav = 'assets/images/report_nav.png';
   static const String profileNav = 'assets/images/profile_nav.png';
+  static const String email = 'assets/images/email.png';
 }

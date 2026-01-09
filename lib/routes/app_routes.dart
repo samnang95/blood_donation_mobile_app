@@ -1,4 +1,5 @@
 import 'package:blood_donation_mobile_app/feature/detail/detail_page.dart';
+import 'package:blood_donation_mobile_app/feature/edit_profile/edit_profile_page.dart';
 import 'package:blood_donation_mobile_app/feature/main/main_page.dart';
 import 'package:blood_donation_mobile_app/feature/profile/profile_binding.dart';
 import 'package:blood_donation_mobile_app/feature/search/search_binding.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 import '../feature/detail/detail_binding.dart';
 import '../feature/donation_request/donation_request_binding.dart';
 import '../feature/donation_request/donation_request_page.dart';
+import '../feature/edit_profile/edit_profile_binding.dart';
 import '../feature/home/home_binding.dart';
 import '../feature/home/home_page.dart';
 import '../feature/noification/notification_binding.dart';
@@ -28,6 +30,7 @@ class AppRoutes {
   static const String prfile = '/profile';
   static const String report = '/report';
   static const String notification = '/notification';
+  static const String editProfile = '/edit-profile';
   static final routes = [
     GetPage(name: main, page: () => const MainPage()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -49,6 +52,11 @@ class AppRoutes {
       name: notification,
       page: () => NotificationPage(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: editProfile,
+      page: () => EditProfilePage(),
+      binding: EditProfileBinding(),
     ),
   ];
 }
