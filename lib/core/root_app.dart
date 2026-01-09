@@ -26,7 +26,7 @@ class RootApp extends StatelessWidget {
       // darkTheme: AppThemes.darkTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.main,
+      initialRoute: AppRoutes.editProfile,
       getPages: AppRoutes.routes,
     );
   }
