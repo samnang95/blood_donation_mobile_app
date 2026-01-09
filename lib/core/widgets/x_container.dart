@@ -10,6 +10,7 @@ class XContainer extends StatelessWidget {
   final Widget child;
   final bool isShadow;
   final EdgeInsetsGeometry? padding;
+  final BorderRadiusGeometry? borderRadius;
   const XContainer({
     super.key,
     this.height,
@@ -18,6 +19,7 @@ class XContainer extends StatelessWidget {
     this.backgroundColor = AppColors.backgroundColor,
     this.borderColor = AppColors.grey400,
     this.isShadow = true,
+    this.borderRadius,
     required this.child,
   });
 
@@ -29,7 +31,7 @@ class XContainer extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: borderRadius ?? BorderRadius.circular(10),
         border: Border.all(color: borderColor ?? Colors.transparent, width: 1),
         boxShadow: [
           if (isShadow)

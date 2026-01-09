@@ -11,6 +11,9 @@ class ReportPage extends GetView<ReportController> {
   Widget build(BuildContext context) {
     return XScaffold(
       title: "Report",
+      onNotificationTap: () {
+        Get.toNamed('/notification');
+      },
       body: SizedBox(
         child: Column(children: [Expanded(child: ReportTap())]),
       ),
