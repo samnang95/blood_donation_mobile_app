@@ -43,12 +43,16 @@ class ProfilePage extends GetView<ProfileController> {
               ProfileList(
                 title: 'Invite a Friends',
                 prefixIcon: Image.asset(AppImages.add),
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed('/setting');
+                },
               ),
               ProfileList(
                 title: 'Edit Profile',
                 prefixIcon: Image.asset(AppImages.noteList),
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed('/setting');
+                },
               ),
               ProfileList(
                 title: 'Setting',

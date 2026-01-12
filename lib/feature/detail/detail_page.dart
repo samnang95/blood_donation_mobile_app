@@ -20,6 +20,9 @@ class DetailPage extends GetView<DetailController> {
         AppIcons.icArrowLeft,
         colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
       ),
+      onBackTap: () {
+        Get.back();
+      },
       body: Padding(
         padding: const EdgeInsets.only(
           left: 16.0,

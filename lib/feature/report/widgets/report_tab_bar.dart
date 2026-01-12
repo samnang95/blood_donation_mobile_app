@@ -142,8 +142,12 @@ class ReportTabBar extends GetView<ReportController> {
                   timeAgo: request.timeAgo,
                   status: request.status,
                   bloodType: request.bloodType,
-                  onAccept: () {},
-                  onReject: () {},
+                  onAccept: () {
+                    Get.toNamed('/detail');
+                  },
+                  onReject: () {
+                    Get.toNamed('/detail');
+                  },
                 ),
               ),
             ),
@@ -184,8 +188,12 @@ class ReportTabBar extends GetView<ReportController> {
                   timeAgo: request.timeAgo,
                   status: request.status,
                   bloodType: request.bloodType,
-                  onAccept: () {},
-                  onReject: () {},
+                  onAccept: () {
+                    Get.toNamed('/detail');
+                  },
+                  onReject: () {
+                    Get.toNamed('/detail');
+                  },
                 ),
               ),
             ),

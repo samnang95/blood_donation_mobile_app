@@ -18,7 +18,6 @@ class HomePage extends GetView<HomeController> {
       onNotificationTap: () {
         Get.toNamed('/notification');
       },
-      onBackTap: () {},
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -69,8 +68,12 @@ class HomePage extends GetView<HomeController> {
                         timeAgo: request.timeAgo,
                         status: request.status,
                         bloodType: request.bloodType,
-                        onAccept: () {},
-                        onReject: () {},
+                        onAccept: () {
+                          Get.toNamed('/detail', arguments: request);
+                        },
+                        onReject: () {
+                          Get.toNamed('/detail', arguments: request);
+                        },
                       ),
                     );
                   },
@@ -100,8 +103,12 @@ class HomePage extends GetView<HomeController> {
                         timeAgo: request.timeAgo,
                         status: request.status,
                         bloodType: request.bloodType,
-                        onAccept: () {},
-                        onReject: () {},
+                        onAccept: () {
+                          Get.toNamed('/detail', arguments: request);
+                        },
+                        onReject: () {
+                          Get.toNamed('/detail', arguments: request);
+                        },
                       ),
                     );
                   },
