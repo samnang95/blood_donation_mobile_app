@@ -1,59 +1,124 @@
-import 'package:blood_donation_mobile_app/feature/home/home_page.dart';
-import 'package:blood_donation_mobile_app/feature/profile/profile_page.dart';
-import 'package:blood_donation_mobile_app/feature/search/search_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_images.dart';
+import '../home/home_page.dart';
+import '../profile/profile_page.dart';
 import '../report/report_page.dart';
+import '../search/search_home.dart';
+import 'main_controller.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends GetView<MainController> {
   const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  final RxInt currentIndex = 0.obs;
-
-  final List<Widget> pages = [
-    const HomePage(),
-    const SearchHome(),
-    const ReportPage(),
-    const ProfilePage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(() => pages[currentIndex.value]),
-      backgroundColor: Colors.white,
+      body: PageView(
+        controller: controller.pageController,
+        onPageChanged: (index) => controller.changePage(index),
+        children: [HomePage(), SearchHome(), ReportPage(), ProfilePage()],
+      ),
       bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: currentIndex.value,
-          onTap: (index) => currentIndex.value = index,
-          type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          backgroundColor: AppColors.backgroundColor,
-          items: const [
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(AppImages.homeNav)),
-              label: 'Home',
+        () => Container(
+          decoration: BoxDecoration(
+            color: AppColors.backgroundColor,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, -2),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildNavItem(
+                    icon: AppImages.homeNav,
+                    label: "Home",
+                    index: 0,
+                  ),
+                  _buildNavItem(
+                    icon: AppImages.findDonorsNav,
+                    label: "Find",
+                    index: 1,
+                  ),
+                  _buildNavItem(
+                    icon: AppImages.reportNav,
+                    label: "Report",
+                    index: 2,
+                  ),
+                  _buildNavItem(
+                    icon: AppImages.profileNav,
+                    label: "Profile",
+                    index: 3,
+                  ),
+                ],
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(AppImages.findDonorsNav)),
-              label: 'Find Donors',
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavItem({
+    required String icon,
+    required String label,
+    required int index,
+  }) {
+    final isSelected = controller.currentIndex.value == index;
+
+    return GestureDetector(
+      onTap: () => controller.changePageWithAnimation(index),
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: isSelected
+            ? const Duration(milliseconds: 300)
+            : const Duration(milliseconds: 0),
+        curve: Curves.easeInOut,
+        padding: EdgeInsets.symmetric(
+          horizontal: isSelected ? 16 : 12,
+          vertical: 8,
+        ),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? Colors.blue.withValues(alpha: 0.1)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ImageIcon(
+              AssetImage(icon),
+              color: isSelected ? Colors.blue : Colors.grey[500],
+              size: 20,
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(AppImages.reportNav)),
-              label: 'Reports',
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(AppImages.profileNav)),
-              label: 'Profile',
+            AnimatedSize(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+              child: SizedBox(
+                width: isSelected ? null : 0,
+                child: isSelected
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Text(
+                          label,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+              ),
             ),
           ],
         ),

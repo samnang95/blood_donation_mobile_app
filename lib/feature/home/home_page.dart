@@ -37,8 +37,12 @@ class HomePage extends GetView<HomeController> {
                 onFindDonorsTap: () {
                   Get.toNamed('/search');
                 },
-                onRequestBloodTap: () {},
-                onReportTap: () {},
+                onRequestBloodTap: () {
+                  Get.toNamed('/request-form');
+                },
+                onReportTap: () {
+                  Get.toNamed('/report');
+                },
               ),
               const SizedBox(height: 20),
               XButtonBack(

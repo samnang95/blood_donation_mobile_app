@@ -11,6 +11,7 @@ class SearchHome extends GetView<DonorSearchController> {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController searchController = TextEditingController();
     return XScaffold(
       title: 'Find Donors',
       onNotificationTap: () {
@@ -21,8 +22,12 @@ class SearchHome extends GetView<DonorSearchController> {
         child: Column(
           children: [
             XTextResearch(
+              controller: searchController,
               onChanged: (value) {
                 print(value);
+              },
+              onClear: () {
+                print('Cleared');
               },
             ),
             SizedBox(height: 20),

@@ -4,35 +4,63 @@ import 'package:flutter/material.dart';
 import '../../constants/app_images.dart';
 
 class XTextResearch extends StatelessWidget {
-  final String? hintText;
-  final TextEditingController? controller;
+  final String hintText;
+  final TextEditingController controller;
   final ValueChanged<String>? onChanged;
+  final VoidCallback? onClear;
 
   const XTextResearch({
     super.key,
     this.hintText = 'Name',
-    this.controller,
+    required this.controller,
     this.onChanged,
+    this.onClear,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
+      height: 48,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(color: Colors.grey.shade300, width: 1.5),
       ),
       child: TextField(
         controller: controller,
         onChanged: onChanged,
+        textInputAction: TextInputAction.search,
+        textCapitalization: TextCapitalization.none,
+        style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
-          prefixIcon: SizedBox(child: Image.asset(AppImages.textSearch)),
+          isDense: true,
+
+          // 🔍 Search icon
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Image.asset(
+              AppImages.textSearch,
+              width: 18,
+              height: 18,
+              color: AppColors.grey200,
+            ),
+          ),
+
+          // ❌ Clear icon
+          suffixIcon: controller.text.isNotEmpty
+              ? GestureDetector(
+                  onTap: () {
+                    controller.clear();
+                    onClear?.call();
+                  },
+                  child: const Icon(Icons.close),
+                )
+              : null,
+
+          contentPadding: const EdgeInsets.symmetric(vertical: 12),
           hintText: hintText,
-          hintStyle: TextStyle(color: AppColors.grey200, fontSize: 16),
+          hintStyle: const TextStyle(fontSize: 14, color: AppColors.grey200),
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(vertical: 14),
         ),
       ),
     );
