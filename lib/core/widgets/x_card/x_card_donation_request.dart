@@ -31,12 +31,12 @@ class XCardDonationRequest extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.backgroundColor,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColors.grey200, width: 1),
+        border: Border.all(color: AppColors.darkColor, width: 1),
         boxShadow: [
           BoxShadow(
-            color: AppColors.grey600.withValues(alpha: 0.07),
+            color: AppColors.grey200.withValues(alpha: 0.07),
             blurRadius: 4,
-            // offset: const Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -126,7 +126,7 @@ class XCardDonationRequest extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.w600,
-                            fontSize: 16,
+                            fontSize: 14,
                           ),
                         ),
                       ),

@@ -6,6 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controller/theme_controller.dart';
 import '../feature/report/report_controller.dart';
 import '../routes/app_routes.dart';
 
@@ -18,15 +19,14 @@ class RootApp extends StatelessWidget {
     Get.put(DonorSearchController());
     Get.put(ReportController());
     Get.put(ProfileController());
+    Get.put(ThemeController());
     return GetMaterialApp(
       title: AppConfig.APP_NAME,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      // theme: AppThemes.lightTheme,
-      // darkTheme: AppThemes.darkTheme,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.editProfile,
+      initialRoute: AppRoutes.main,
       getPages: AppRoutes.routes,
     );
   }

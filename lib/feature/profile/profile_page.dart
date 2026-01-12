@@ -28,7 +28,9 @@ class ProfilePage extends GetView<ProfileController> {
                 textButton: 'Edit',
                 title: 'Van Chackriya',
                 subTitle: 'General Hospital, Phnom Penh',
-                onEdit: () {},
+                onEdit: () {
+                  Get.toNamed('/edit-profile');
+                },
               ),
               SizedBox(height: 16),
               XUserStats(bloodType: 'O+', donated: 3, request: 6),
@@ -51,7 +53,9 @@ class ProfilePage extends GetView<ProfileController> {
               ProfileList(
                 title: 'Setting',
                 prefixIcon: Image.asset(AppImages.setting),
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed('/setting');
+                },
               ),
               ProfileList(
                 title: 'Sign Out',

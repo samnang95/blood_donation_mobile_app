@@ -29,4 +29,10 @@ class AppImages {
   static const String reportNav = 'assets/images/report_nav.png';
   static const String profileNav = 'assets/images/profile_nav.png';
   static const String email = 'assets/images/email.png';
+  static const String unKnown = 'assets/images/unknown.png';
+  static const String security = 'assets/images/security.png';
+  static const String notication = 'assets/images/notication.png';
+  static const String language = 'assets/images/language.png';
+  static const String darkMode = 'assets/images/dark-mode.png';
+  static const String toggle = 'assets/images/toggle.png';
 }
