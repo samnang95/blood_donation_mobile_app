@@ -31,7 +31,7 @@ class XCardDonationRequest extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.backgroundColor,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColors.darkColor, width: 1),
+        border: Border.all(color: AppColors.grey200, width: 1),
         boxShadow: [
           BoxShadow(
             color: AppColors.grey200.withValues(alpha: 0.07),

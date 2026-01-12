@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../data/x_model_donation_request.dart';
@@ -7,7 +8,9 @@ class ReportController extends GetxController {
   RxList<XModelDonationRequest> donationRequests =
       <XModelDonationRequest>[].obs;
   RxList<XModelRequestDonation> requestDonation = <XModelRequestDonation>[].obs;
-
+  final PageController pageController = PageController();
+  final RxInt currentPage = 0.obs;
+  final RxSet<int> selectedItems = <int>{}.obs;
   @override
   void onInit() {
     super.onInit();
