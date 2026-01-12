@@ -35,4 +35,5 @@ class AppImages {
   static const String language = 'assets/images/language.png';
   static const String darkMode = 'assets/images/dark-mode.png';
   static const String toggle = 'assets/images/toggle.png';
+  static const String bgDetails = 'assets/images/bg-details.png';
 }
