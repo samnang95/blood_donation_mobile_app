@@ -6,6 +6,8 @@ import 'package:blood_donation_mobile_app/feature/request_form/request_form_page
 import 'package:blood_donation_mobile_app/feature/search/search_binding.dart';
 import 'package:blood_donation_mobile_app/feature/search/search_home.dart';
 import 'package:blood_donation_mobile_app/feature/setting/setting_page.dart';
+import 'package:blood_donation_mobile_app/feature/splash/splash_binding.dart';
+import 'package:blood_donation_mobile_app/feature/splash/splash_page.dart';
 import 'package:get/get.dart';
 
 import '../feature/detail/detail_binding.dart';
@@ -38,6 +40,7 @@ class AppRoutes {
   static const String editProfile = '/edit-profile';
   static const String setting = '/setting';
   static const String requestForm = '/request-form';
+  static const String splash = '/splash';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -79,5 +82,6 @@ class AppRoutes {
       page: () => RequestFormPage(),
       binding: RequestFormBinding(),
     ),
+    GetPage(name: splash, page: () => SplashPage(), binding: SplashBinding()),
   ];
 }
