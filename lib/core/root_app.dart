@@ -3,7 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../routes/app_routes.dart';
+import '../feature/language/widgets/language_list.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});
@@ -16,8 +16,9 @@ class RootApp extends StatelessWidget {
       locale: context.locale,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.main,
-      getPages: AppRoutes.routes,
+      // initialRoute: AppRoutes.main,
+      // getPages: AppRoutes.routes,
+      home: LanguageList(),
     );
   }
 }
