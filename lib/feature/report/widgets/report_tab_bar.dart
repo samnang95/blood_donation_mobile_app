@@ -172,7 +172,7 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: XCardDonationRequest(
                 name: request.name,
                 location: request.location,
@@ -209,7 +209,7 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: XCardDonationRequest(
                 name: request.name,
                 location: request.location,

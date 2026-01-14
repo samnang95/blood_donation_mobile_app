@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class DonorSearchController extends GetxController {
   RxList<Map<String, dynamic>> donors = <Map<String, dynamic>>[].obs;
-  RxBool showDivider = true.obs;
+  RxBool showDivider = false.obs;
   ScrollController scrollController = ScrollController();
 
   @override

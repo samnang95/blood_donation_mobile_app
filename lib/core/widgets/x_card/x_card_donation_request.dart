@@ -167,9 +167,9 @@ class XCardDonationRequest extends StatelessWidget {
         Positioned(
           top: -2,
           bottom: -2,
-          right: -4,
+          right: -2,
           child: Container(
-            width: 4,
+            width: 2,
             decoration: BoxDecoration(
               color: AppColors.backgroundColor,
               borderRadius: const BorderRadius.only(

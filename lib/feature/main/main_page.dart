@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/app_colors.dart';
@@ -14,52 +15,61 @@ class MainPage extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        controller: controller.pageController,
-        physics: NeverScrollableScrollPhysics(), // Disable swipe gesture
-        onPageChanged: (index) => controller.changePage(index),
-        children: [HomePage(), SearchHome(), ReportPage(), ProfilePage()],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: AppColors.backgroundColor,
+        statusBarIconBrightness: Brightness.dark,
       ),
-      bottomNavigationBar: Obx(
-        () => Container(
-          decoration: BoxDecoration(
-            color: AppColors.backgroundColor,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: const Offset(0, -2),
-              ),
-            ],
-          ),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildNavItem(
-                    icon: AppImages.homeNav,
-                    label: "Home",
-                    index: 0,
-                  ),
-                  _buildNavItem(
-                    icon: AppImages.findDonorsNav,
-                    label: "Find",
-                    index: 1,
-                  ),
-                  _buildNavItem(
-                    icon: AppImages.reportNav,
-                    label: "Report",
-                    index: 2,
-                  ),
-                  _buildNavItem(
-                    icon: AppImages.profileNav,
-                    label: "Profile",
-                    index: 3,
-                  ),
-                ],
+      child: Scaffold(
+        body: PageView(
+          controller: controller.pageController,
+          physics: NeverScrollableScrollPhysics(), // Disable swipe gesture
+          onPageChanged: (index) => controller.changePage(index),
+          children: [HomePage(), SearchHome(), ReportPage(), ProfilePage()],
+        ),
+        bottomNavigationBar: Obx(
+          () => Container(
+            decoration: BoxDecoration(
+              color: AppColors.backgroundColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, -2),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 12,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildNavItem(
+                      icon: AppImages.homeNav,
+                      label: "Home",
+                      index: 0,
+                    ),
+                    _buildNavItem(
+                      icon: AppImages.findDonorsNav,
+                      label: "Find",
+                      index: 1,
+                    ),
+                    _buildNavItem(
+                      icon: AppImages.reportNav,
+                      label: "Report",
+                      index: 2,
+                    ),
+                    _buildNavItem(
+                      icon: AppImages.profileNav,
+                      label: "Profile",
+                      index: 3,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

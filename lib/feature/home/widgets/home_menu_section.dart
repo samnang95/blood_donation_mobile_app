@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:blood_donation_mobile_app/core/constants/app_colors.dart';
 import 'package:blood_donation_mobile_app/core/constants/app_images.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +34,7 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Expanded(
             child: PageView(
@@ -54,8 +56,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(1);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -77,8 +79,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -91,8 +95,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.toNamed('/request-form');
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -114,8 +118,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -128,8 +134,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(2);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -151,8 +157,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -174,8 +182,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(1);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -197,8 +205,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -211,8 +221,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.toNamed('/request-form');
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -234,8 +244,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -248,8 +260,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(2);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -271,8 +283,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -294,8 +308,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(1);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -317,8 +331,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -331,8 +347,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.toNamed('/request-form');
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -354,8 +370,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -368,8 +386,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                           Get.find<MainController>().changePageWithAnimation(2);
                         },
                         child: Container(
-                          width: 100,
-                          height: 100,
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.width / 4,
                           decoration: BoxDecoration(
                             color: AppColors.backgroundColor,
                             borderRadius: BorderRadius.circular(8),
@@ -391,8 +409,10 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontSize: min(
+                                    MediaQuery.of(context).size.width * 0.03,
+                                    16,
+                                  ),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

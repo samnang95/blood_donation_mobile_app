@@ -32,15 +32,7 @@ class SearchHome extends GetView<DonorSearchController> {
             ),
             Obx(
               () => controller.showDivider.value
-                  ? Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: SizedBox(
-                          width: double.infinity,
-                          child: Divider(height: 1, color: Colors.grey[200]),
-                        ),
-                      ),
-                    )
+                  ? Divider(height: 1, color: Colors.grey[200], thickness: 1)
                   : SizedBox.shrink(),
             ),
             Expanded(
@@ -51,7 +43,12 @@ class SearchHome extends GetView<DonorSearchController> {
                   itemBuilder: (context, index) {
                     var donor = controller.donors[index];
                     return Padding(
-                      padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
+                      padding: const EdgeInsets.only(
+                        right: 8,
+                        left: 8,
+                        top: 8,
+                        bottom: 8,
+                      ),
                       child: XCardFindDonor(
                         name: donor['name'],
                         hospital: donor['hospital'],
