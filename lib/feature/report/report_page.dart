@@ -15,7 +15,7 @@ class ReportPage extends GetView<ReportController> {
         Get.toNamed('/notification');
       },
       body: Padding(
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+        padding: const EdgeInsets.only(top: 8, right: 8, left: 8),
         child: ReportTabBar(),
       ),
     );

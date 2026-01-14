@@ -12,79 +12,105 @@ class ReportTabBar extends GetView<ReportController> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // TAB BAR
         Padding(
-          padding: const EdgeInsets.only(bottom: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
           child: Container(
             width: double.infinity,
-            height: 40,
+            height: 45,
             decoration: BoxDecoration(
               color: Colors.grey[200],
-              borderRadius: BorderRadius.all(Radius.circular(8)),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Obx(
-                  () => InkWell(
-                    onTap: () {
-                      controller.currentPage.value = 0;
-                      controller.pageController.animateToPage(
-                        0,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    child: Container(
-                      height: 35,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: controller.currentPage.value == 0
-                            ? AppColors.backgroundColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Request Donation",
-                          style: TextStyle(
-                            color: controller.currentPage.value == 0
-                                ? AppColors.bgscafold
-                                : AppColors.grey600,
-                            fontWeight: FontWeight.w500,
+                // REQUEST DONATION TAB
+                Expanded(
+                  child: Obx(
+                    () => Material(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(8),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(8),
+                        splashColor: AppColors.backgroundColor.withOpacity(0.3),
+                        highlightColor: AppColors.backgroundColor.withOpacity(
+                          0.1,
+                        ),
+                        onTap: () {
+                          controller.currentPage.value = 0;
+                          controller.pageController.animateToPage(
+                            0,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: controller.currentPage.value == 0
+                                  ? AppColors.backgroundColor
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Request Donation",
+                                style: TextStyle(
+                                  color: controller.currentPage.value == 0
+                                      ? AppColors.bgscafold
+                                      : AppColors.grey600,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 5),
-                Obx(
-                  () => InkWell(
-                    onTap: () {
-                      controller.currentPage.value = 1;
-                      controller.pageController.animateToPage(
-                        1,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    child: Container(
-                      height: 35,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: controller.currentPage.value == 1
-                            ? AppColors.backgroundColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Donation Request",
-                          style: TextStyle(
-                            color: controller.currentPage.value == 1
-                                ? AppColors.bgscafold
-                                : AppColors.grey600,
-                            fontWeight: FontWeight.w500,
+
+                // DONATION REQUEST TAB
+                Expanded(
+                  child: Obx(
+                    () => Material(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(8),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(8),
+                        splashColor: AppColors.backgroundColor.withOpacity(0.3),
+                        highlightColor: AppColors.backgroundColor.withOpacity(
+                          0.1,
+                        ),
+                        onTap: () {
+                          controller.currentPage.value = 1;
+                          controller.pageController.animateToPage(
+                            1,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: controller.currentPage.value == 1
+                                  ? AppColors.backgroundColor
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Donation Request",
+                                style: TextStyle(
+                                  color: controller.currentPage.value == 1
+                                      ? AppColors.bgscafold
+                                      : AppColors.grey600,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -95,16 +121,15 @@ class ReportTabBar extends GetView<ReportController> {
             ),
           ),
         ),
+
+        // DIVIDER
         Obx(
           () => controller.showDivider.value
-              ? Center(
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Divider(height: 1, color: Colors.grey[200]),
-                  ),
-                )
+              ? Divider(height: 1, color: Colors.grey[200], thickness: 1)
               : SizedBox.shrink(),
         ),
+
+        // PAGE VIEW
         Expanded(
           child: PageView(
             controller: controller.pageController,
@@ -127,6 +152,7 @@ class ReportTabBar extends GetView<ReportController> {
     );
   }
 
+  // REQUEST DONATION PAGE
   Widget _requestDonationPage(RxSet<int> selectedItems) {
     return Obx(
       () => ListView.builder(
@@ -146,30 +172,15 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: isSelected
-                      ? Border.all(color: AppColors.backgroundColor, width: 2)
-                      : null,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: XCardDonationRequest(
-                    name: request.name,
-                    location: request.location,
-                    timeAgo: request.timeAgo,
-                    status: request.status,
-                    bloodType: request.bloodType,
-                    onAccept: () {
-                      Get.toNamed('/detail');
-                    },
-                    onReject: () {
-                      Get.toNamed('/detail');
-                    },
-                  ),
-                ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: XCardDonationRequest(
+                name: request.name,
+                location: request.location,
+                timeAgo: request.timeAgo,
+                status: request.status,
+                bloodType: request.bloodType,
+                onAccept: () => Get.toNamed('/detail'),
+                onReject: () => Get.toNamed('/detail'),
               ),
             ),
           );
@@ -178,6 +189,7 @@ class ReportTabBar extends GetView<ReportController> {
     );
   }
 
+  // DONATION REQUEST PAGE
   Widget _donationRequestPage(RxSet<int> selectedItems) {
     return Obx(
       () => ListView.builder(
@@ -197,30 +209,15 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: isSelected
-                      ? Border.all(color: AppColors.backgroundColor, width: 2)
-                      : null,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: XCardDonationRequest(
-                    name: request.name,
-                    location: request.location,
-                    timeAgo: request.timeAgo,
-                    status: request.status,
-                    bloodType: request.bloodType,
-                    onAccept: () {
-                      Get.toNamed('/detail');
-                    },
-                    onReject: () {
-                      Get.toNamed('/detail');
-                    },
-                  ),
-                ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: XCardDonationRequest(
+                name: request.name,
+                location: request.location,
+                timeAgo: request.timeAgo,
+                status: request.status,
+                bloodType: request.bloodType,
+                onAccept: () => Get.toNamed('/detail'),
+                onReject: () => Get.toNamed('/detail'),
               ),
             ),
           );

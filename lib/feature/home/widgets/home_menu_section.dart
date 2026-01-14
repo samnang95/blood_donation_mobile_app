@@ -77,7 +77,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -113,7 +114,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -149,7 +151,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -194,7 +197,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -230,7 +234,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -266,7 +271,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -311,7 +317,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Find Donors',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -347,7 +354,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Request Blood',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -383,7 +391,8 @@ class _HomeMenuSectionState extends State<HomeMenuSection> {
                                 'Report',
                                 style: TextStyle(
                                   color: AppColors.darkColor,
-                                  fontSize: 12,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
