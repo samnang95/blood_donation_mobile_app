@@ -25,14 +25,14 @@ class RequestDonationPage extends GetView<RequestDonationController> {
         colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Obx(
           () => ListView.builder(
             itemCount: controller.requestDonation.length,
             itemBuilder: (context, index) {
               final request = controller.requestDonation[index];
               return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
+                padding: const EdgeInsets.only(top: 16, left: 8, right: 8),
                 child: XCardDonationRequest(
                   name: request.name,
                   location: request.location,

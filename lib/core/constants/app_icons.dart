@@ -48,6 +48,8 @@ class AppIcons {
   static const String icLogoM = 'assets/svg/ic-logo-m.svg';
   static const String icImage = 'assets/svg/ic-image.svg';
   static const String icMapLocation = 'assets/svg/ic-map-location.svg';
+
   static const String icNoToManSuperhero =
       'assets/svg/ic-noto-man-superhero.svg';
+  static const String icLanguageBig = 'assets/svg/ic-language-big.svg';
 }

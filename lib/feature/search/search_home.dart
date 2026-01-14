@@ -18,7 +18,7 @@ class SearchHome extends GetView<DonorSearchController> {
         Get.toNamed('/notification');
       },
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
         child: Column(
           children: [
             XTextResearch(
@@ -30,19 +30,33 @@ class SearchHome extends GetView<DonorSearchController> {
                 print('Cleared');
               },
             ),
-            SizedBox(height: 20),
+            Obx(
+              () => controller.showDivider.value
+                  ? Divider(height: 1, color: Colors.grey[200], thickness: 1)
+                  : SizedBox.shrink(),
+            ),
             Expanded(
               child: Obx(
                 () => ListView.builder(
+                  controller: controller.scrollController,
                   itemCount: controller.donors.length,
                   itemBuilder: (context, index) {
                     var donor = controller.donors[index];
-                    return XCardFindDonor(
-                      name: donor['name'],
-                      hospital: donor['hospital'],
-                      bloodType: donor['bloodType'],
-                      imageProfile: donor['imageProfile'],
-                      onTap: () {},
+                    return Padding(
+                      padding: const EdgeInsets.only(
+                        right: 8,
+                        left: 8,
+                        top: 8,
+                        bottom: 8,
+                      ),
+                      child: XCardFindDonor(
+                        name: donor['name'],
+                        hospital: donor['hospital'],
+                        bloodType: donor['bloodType'],
+                        onTap: () {
+                          Get.toNamed('/detail', arguments: donor);
+                        },
+                      ),
                     );
                   },
                 ),

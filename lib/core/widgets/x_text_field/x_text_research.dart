@@ -19,48 +19,52 @@ class XTextResearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.shade300, width: 1.5),
-      ),
-      child: TextField(
-        controller: controller,
-        onChanged: onChanged,
-        textInputAction: TextInputAction.search,
-        textCapitalization: TextCapitalization.none,
-        style: const TextStyle(fontSize: 14),
-        decoration: InputDecoration(
-          isDense: true,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      child: Container(
+        width: double.infinity,
+        height: 48,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.grey.shade300, width: 1.5),
+        ),
+        child: TextField(
+          controller: controller,
+          onChanged: onChanged,
+          textInputAction: TextInputAction.search,
+          textCapitalization: TextCapitalization.none,
+          style: const TextStyle(fontSize: 14),
+          decoration: InputDecoration(
+            isDense: true,
 
-          // 🔍 Search icon
-          prefixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Image.asset(
-              AppImages.textSearch,
-              width: 18,
-              height: 18,
-              color: AppColors.grey200,
+            // 🔍 Search icon
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Image.asset(
+                AppImages.textSearch,
+                width: 18,
+                height: 18,
+                color: AppColors.grey200,
+              ),
             ),
+
+            // ❌ Clear icon
+            suffixIcon: controller.text.isNotEmpty
+                ? GestureDetector(
+                    onTap: () {
+                      controller.clear();
+                      onClear?.call();
+                    },
+                    child: const Icon(Icons.close),
+                  )
+                : null,
+
+            contentPadding: const EdgeInsets.symmetric(vertical: 12),
+            hintText: hintText,
+            hintStyle: const TextStyle(fontSize: 14, color: AppColors.grey200),
+            border: InputBorder.none,
           ),
-
-          // ❌ Clear icon
-          suffixIcon: controller.text.isNotEmpty
-              ? GestureDetector(
-                  onTap: () {
-                    controller.clear();
-                    onClear?.call();
-                  },
-                  child: const Icon(Icons.close),
-                )
-              : null,
-
-          contentPadding: const EdgeInsets.symmetric(vertical: 12),
-          hintText: hintText,
-          hintStyle: const TextStyle(fontSize: 14, color: AppColors.grey200),
-          border: InputBorder.none,
         ),
       ),
     );

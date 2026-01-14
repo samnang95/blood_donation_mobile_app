@@ -17,19 +17,22 @@ class DonationRequestPage extends GetView<DonationRequestController> {
       onBackTap: () {
         Get.back();
       },
+      onNotificationTap: () {
+        Get.toNamed('/notification');
+      },
       backIcone: SvgPicture.asset(
         AppIcons.icArrowLeft,
         colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Obx(
           () => ListView.builder(
             itemCount: controller.donationRequests.length,
             itemBuilder: (context, index) {
               final request = controller.donationRequests[index];
               return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
+                padding: const EdgeInsets.only(top: 16),
                 child: XCardDonationRequest(
                   name: request.name,
                   location: request.location,
