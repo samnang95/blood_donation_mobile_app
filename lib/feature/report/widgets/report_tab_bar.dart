@@ -95,11 +95,27 @@ class ReportTabBar extends GetView<ReportController> {
             ),
           ),
         ),
+        Obx(
+          () => controller.showDivider.value
+              ? Center(
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Divider(height: 1, color: Colors.grey[200]),
+                  ),
+                )
+              : SizedBox.shrink(),
+        ),
         Expanded(
           child: PageView(
             controller: controller.pageController,
+            physics: NeverScrollableScrollPhysics(),
             onPageChanged: (index) {
               controller.currentPage.value = index;
+              controller.showDivider.value =
+                  (index == 0
+                      ? controller.scrollController1.offset
+                      : controller.scrollController2.offset) >
+                  0;
             },
             children: [
               _requestDonationPage(controller.selectedItems),
@@ -114,6 +130,8 @@ class ReportTabBar extends GetView<ReportController> {
   Widget _requestDonationPage(RxSet<int> selectedItems) {
     return Obx(
       () => ListView.builder(
+        controller: controller.scrollController1,
+        shrinkWrap: true,
         itemCount: controller.requestDonation.length,
         itemBuilder: (context, index) {
           final request = controller.requestDonation[index];
@@ -128,7 +146,7 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.only(top: 16),
               child: Container(
                 decoration: BoxDecoration(
                   border: isSelected
@@ -136,18 +154,21 @@ class ReportTabBar extends GetView<ReportController> {
                       : null,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: XCardDonationRequest(
-                  name: request.name,
-                  location: request.location,
-                  timeAgo: request.timeAgo,
-                  status: request.status,
-                  bloodType: request.bloodType,
-                  onAccept: () {
-                    Get.toNamed('/detail');
-                  },
-                  onReject: () {
-                    Get.toNamed('/detail');
-                  },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: XCardDonationRequest(
+                    name: request.name,
+                    location: request.location,
+                    timeAgo: request.timeAgo,
+                    status: request.status,
+                    bloodType: request.bloodType,
+                    onAccept: () {
+                      Get.toNamed('/detail');
+                    },
+                    onReject: () {
+                      Get.toNamed('/detail');
+                    },
+                  ),
                 ),
               ),
             ),
@@ -160,6 +181,8 @@ class ReportTabBar extends GetView<ReportController> {
   Widget _donationRequestPage(RxSet<int> selectedItems) {
     return Obx(
       () => ListView.builder(
+        controller: controller.scrollController2,
+        shrinkWrap: true,
         itemCount: controller.donationRequests.length,
         itemBuilder: (context, index) {
           final request = controller.donationRequests[index];
@@ -174,7 +197,7 @@ class ReportTabBar extends GetView<ReportController> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.only(top: 16),
               child: Container(
                 decoration: BoxDecoration(
                   border: isSelected
@@ -182,18 +205,21 @@ class ReportTabBar extends GetView<ReportController> {
                       : null,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: XCardDonationRequest(
-                  name: request.name,
-                  location: request.location,
-                  timeAgo: request.timeAgo,
-                  status: request.status,
-                  bloodType: request.bloodType,
-                  onAccept: () {
-                    Get.toNamed('/detail');
-                  },
-                  onReject: () {
-                    Get.toNamed('/detail');
-                  },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: XCardDonationRequest(
+                    name: request.name,
+                    location: request.location,
+                    timeAgo: request.timeAgo,
+                    status: request.status,
+                    bloodType: request.bloodType,
+                    onAccept: () {
+                      Get.toNamed('/detail');
+                    },
+                    onReject: () {
+                      Get.toNamed('/detail');
+                    },
+                  ),
                 ),
               ),
             ),

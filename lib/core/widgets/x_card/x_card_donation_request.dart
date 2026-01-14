@@ -26,82 +26,82 @@ class XCardDonationRequest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundColor,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColors.grey200, width: 1),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.grey200.withValues(alpha: 0.07),
-            blurRadius: 4,
-            offset: const Offset(0, 4),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+          decoration: BoxDecoration(
+            color: AppColors.backgroundColor,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.darkColor.withValues(alpha: 0.07),
+                blurRadius: 4,
+                spreadRadius: 1,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// NAME + BLOOD TYPE
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _labelRow(AppIcons.icProfile, "Name"),
-                  const SizedBox(height: 2),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _labelRow(AppIcons.icProfile, "Name"),
+                      const SizedBox(height: 2),
+                      Text(
+                        name,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                   Text(
-                    name,
+                    bloodType,
                     style: const TextStyle(
-                      fontSize: 14,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
-              Text(
-                bloodType,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+
+              const SizedBox(height: 8),
+
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _labelRow(AppIcons.icLocation, "Location"),
+                        const SizedBox(height: 2),
+                        Text(location, style: const TextStyle(fontSize: 14)),
+                      ],
+                    ),
+                  ),
+                  SvgPicture.asset(AppIcons.icBlood, width: 40, height: 40),
+                ],
               ),
-            ],
-          ),
 
-          const SizedBox(height: 8),
+              const SizedBox(height: 8),
 
-          /// LOCATION
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _labelRow(AppIcons.icLocation, "Location"),
-                    const SizedBox(height: 2),
-                    Text(location, style: const TextStyle(fontSize: 14)),
-                  ],
-                ),
-              ),
-              SvgPicture.asset(AppIcons.icBlood, width: 40, height: 40),
-            ],
-          ),
+              _labelRow(AppIcons.icTime, "Time"),
+              const SizedBox(height: 2),
 
-          const SizedBox(height: 8),
-
-          /// TIME
-          _labelRow(AppIcons.icTime, "Time"),
-          const SizedBox(height: 2),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(timeAgo, style: const TextStyle(fontSize: 12)),
-              status != null
-                  ? Text(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(timeAgo, style: const TextStyle(fontSize: 12)),
+                  if (status != null)
+                    Text(
                       status!,
                       style: TextStyle(
                         color: status == "Pending"
@@ -113,10 +113,8 @@ class XCardDonationRequest extends StatelessWidget {
                         fontSize: 12,
                       ),
                     )
-                  : const SizedBox(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                  else
+                    const SizedBox(),
                   Row(
                     children: [
                       GestureDetector(
@@ -148,8 +146,56 @@ class XCardDonationRequest extends StatelessWidget {
               ),
             ],
           ),
-        ],
-      ),
+        ),
+        // Cover to hide top shadow - increased height
+        Positioned(
+          top: -2,
+          left: -2,
+          right: -4,
+          child: Container(
+            height: 12,
+            decoration: BoxDecoration(
+              color: AppColors.backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+            ),
+          ),
+        ),
+        // Cover to hide right shadow - increased height
+        Positioned(
+          top: -2,
+          bottom: -2,
+          right: -4,
+          child: Container(
+            width: 4,
+            decoration: BoxDecoration(
+              color: AppColors.backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+            ),
+          ),
+        ),
+        // Cover to hide left shadow - increased height
+        Positioned(
+          top: -2,
+          bottom: -2,
+          left: -2,
+          child: Container(
+            width: 2,
+            decoration: BoxDecoration(
+              color: AppColors.backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 

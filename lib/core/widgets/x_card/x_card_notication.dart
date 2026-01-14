@@ -22,82 +22,124 @@ class XCardNotication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 12),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundColor,
-        borderRadius: BorderRadius.circular(16),
-        // border: const Border.fromBorderSide(
-        //   BorderSide(color: AppColors.grey10, width: 1),
-        // ),
-        boxShadow: [
-          BoxShadow(
-            // color: AppColors.grey600,
-            // blurRadius: 0.01,
-            spreadRadius: 0.1,
-            // offset: const Offset(0, 0.1),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 16,
+            bottom: 12,
           ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 38,
-            height: 38,
-            decoration: const BoxDecoration(
-              color: Color(0xFFE0E0E0),
-              shape: BoxShape.circle,
-            ),
-            child: Center(child: SvgPicture.asset(AppIcons.icBlood)),
+          decoration: BoxDecoration(
+            color: AppColors.backgroundColor,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.darkColor.withValues(alpha: 0.1),
+                blurRadius: 6,
+                spreadRadius: 0,
+              ),
+            ],
           ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                    color: Colors.black87,
-                  ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 38,
+                height: 38,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFE0E0E0),
+                  shape: BoxShape.circle,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  message,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.grey600,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Center(child: SvgPicture.asset(AppIcons.icBlood)),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        _textButton('View Details', onViewDetails),
-                        SizedBox(width: 10),
-                        _textButton('Share', onShare),
-                      ],
-                    ),
                     Text(
-                      time,
+                      title,
                       style: const TextStyle(
-                        color: AppColors.grey600,
+                        fontWeight: FontWeight.bold,
                         fontSize: 12,
-                        fontWeight: FontWeight.w500,
+                        color: Colors.black87,
                       ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      message,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: AppColors.grey600,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            _textButton('View Details', onViewDetails),
+                            const SizedBox(width: 10),
+                            _textButton('Share', onShare),
+                          ],
+                        ),
+                        Text(
+                          time,
+                          style: const TextStyle(
+                            color: AppColors.grey600,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
+              ),
+            ],
+          ),
+        ),
+        // Cover to hide top shadow
+        Positioned(
+          top: -2,
+          left: -2,
+          right: -2,
+          child: Container(
+            height: 12,
+            decoration: BoxDecoration(
+              color: AppColors.backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(16),
+                topRight: Radius.circular(16),
+              ),
             ),
           ),
-        ],
-      ),
+        ),
+        // Cover to hide left shadow
+        Positioned(
+          top: 0,
+          left: -2,
+          bottom: 0,
+          child: Container(
+            width: 8,
+            decoration: const BoxDecoration(color: AppColors.backgroundColor),
+          ),
+        ),
+        // Cover to hide right shadow
+        Positioned(
+          top: 0,
+          right: -2,
+          bottom: 0,
+          child: Container(
+            width: 8,
+            decoration: const BoxDecoration(color: AppColors.backgroundColor),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -114,7 +156,7 @@ Widget _textButton(String text, VoidCallback onTap) {
       ),
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColors.bgscafold,
           fontWeight: FontWeight.w600,
           fontSize: 12,
@@ -127,7 +169,7 @@ Widget _textButton(String text, VoidCallback onTap) {
 Widget _buildTime(String time) {
   return Row(
     children: [
-      Icon(Icons.access_time, size: 12, color: AppColors.grey600),
+      const Icon(Icons.access_time, size: 12, color: AppColors.grey600),
       const SizedBox(width: 4),
       Text(
         time,

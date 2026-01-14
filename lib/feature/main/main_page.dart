@@ -17,6 +17,7 @@ class MainPage extends GetView<MainController> {
     return Scaffold(
       body: PageView(
         controller: controller.pageController,
+        physics: NeverScrollableScrollPhysics(), // Disable swipe gesture
         onPageChanged: (index) => controller.changePage(index),
         children: [HomePage(), SearchHome(), ReportPage(), ProfilePage()],
       ),

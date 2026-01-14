@@ -1,6 +1,6 @@
 import 'package:blood_donation_mobile_app/feature/home/home_controller.dart';
 import 'package:blood_donation_mobile_app/feature/home/widgets/home_banner.dart';
-import 'package:blood_donation_mobile_app/feature/home/widgets/home_menu.dart';
+import 'package:blood_donation_mobile_app/feature/home/widgets/home_menu_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,22 +32,12 @@ class HomePage extends GetView<HomeController> {
                 ],
               ),
               const SizedBox(height: 20),
-              HomeMenu(
-                onFindDonorsTap: () {
-                  Get.toNamed('/search');
-                },
-                onRequestBloodTap: () {
-                  Get.toNamed('/request-form');
-                },
-                onReportTap: () {
-                  Get.toNamed('/report');
-                },
-              ),
+              HomeMenuSection(),
               const SizedBox(height: 20),
               XButtonBack(
                 text: "Requests Donation",
-                size: 30, // Background size
-                iconSize: 16, // Icon size
+                size: 30,
+                iconSize: 16,
                 onTap: () {
                   Get.toNamed('/request-donation');
                 },
@@ -104,10 +94,10 @@ class HomePage extends GetView<HomeController> {
                         status: request.status,
                         bloodType: request.bloodType,
                         onAccept: () {
-                          Get.toNamed('/detail', arguments: request);
+                          Get.toNamed('/detail');
                         },
                         onReject: () {
-                          Get.toNamed('/detail', arguments: request);
+                          Get.toNamed('/detail');
                         },
                       ),
                     );
@@ -121,24 +111,3 @@ class HomePage extends GetView<HomeController> {
     );
   }
 }
-
-// Widget _title({
-//   required String text,
-//   Color color = AppColors.grey600,
-//   VoidCallback? onTap,
-// }) {
-//   return Row(
-//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//     children: [
-//       Text(
-//         text,
-//         style: TextStyle(
-//           fontSize: 16,
-//           color: color,
-//           fontWeight: FontWeight.w600, // Semibold
-//         ),
-//       ),
-//       XButtonArrow(),
-//     ],
-//   );
-// }

@@ -22,13 +22,16 @@ class NotificationPage extends GetView<NotificationController> {
         Get.back();
       },
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Obx(
           () => ListView(
             children: [
               for (var section in controller.sections) ...[
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 16,
+                  ),
                   child: Text(
                     section.date,
                     style: const TextStyle(
@@ -41,7 +44,7 @@ class NotificationPage extends GetView<NotificationController> {
                 for (var item in section.items)
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 1,
+                      horizontal: 8,
                       vertical: 8,
                     ),
                     child: XCardNotication(

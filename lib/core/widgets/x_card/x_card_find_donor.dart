@@ -3,12 +3,12 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../constants/app_colors.dart';
 import '../../constants/app_icons.dart';
+import '../../constants/app_images.dart';
 
 class XCardFindDonor extends StatelessWidget {
   final String name;
   final String hospital;
   final String bloodType;
-  final String imageProfile;
   final VoidCallback? onTap;
 
   const XCardFindDonor({
@@ -16,30 +16,21 @@ class XCardFindDonor extends StatelessWidget {
     required this.name,
     required this.hospital,
     required this.bloodType,
-    required this.imageProfile,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8, right: 12),
       decoration: BoxDecoration(
         color: AppColors.backgroundColor,
-        borderRadius: BorderRadius.circular(12),
-        // border: Border.all(color: AppColors.grey200, width: 1),
-        border: Border(
-          bottom: BorderSide(color: AppColors.grey200, width: 1),
-          left: BorderSide(color: AppColors.grey200, width: 1),
-          right: BorderSide(color: AppColors.grey200, width: 1),
-          top: BorderSide(color: AppColors.grey200, width: 1),
-        ),
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: AppColors.darkColor.withValues(alpha: 0.03),
-            blurRadius: 2,
-            // offset: const Offset(0, 4),
+            color: AppColors.darkColor.withValues(alpha: 0.1),
+            blurRadius: 6,
+            spreadRadius: 0,
           ),
         ],
       ),
@@ -50,11 +41,8 @@ class XCardFindDonor extends StatelessWidget {
             Container(
               width: 70,
               height: 70,
-              decoration: BoxDecoration(
-                // border: Border.all(color: AppColors.darkColor, width: 1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Image.asset(imageProfile, fit: BoxFit.cover),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+              child: Image.asset(AppImages.profile, fit: BoxFit.cover),
             ),
             const SizedBox(width: 14),
             Expanded(
