@@ -53,4 +53,5 @@ class AppIcons {
       'assets/svg/ic-noto-man-superhero.svg';
   static const String icLanguageBig = 'assets/svg/ic-language-big.svg';
   static const String icBigBlood = 'assets/svg/ic-big-blood.svg';
+  static const String icBigestBlood = 'assets/svg/ic-bigest-blood.svg';
 }
