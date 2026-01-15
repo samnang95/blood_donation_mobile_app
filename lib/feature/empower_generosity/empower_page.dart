@@ -22,7 +22,7 @@ class EmpowerPage extends GetView<EmpowerController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               EmpowerSectionTop(
-                onEdit: () {
+                onTap: () {
                   print("Hello");
                 },
               ),

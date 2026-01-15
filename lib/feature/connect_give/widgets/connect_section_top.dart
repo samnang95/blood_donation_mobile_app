@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
 
-class EmpowerSectionTop extends StatelessWidget {
+class ConnectSectionTop extends StatelessWidget {
   final VoidCallback? onTap;
-  const EmpowerSectionTop({super.key, this.onTap});
+  const ConnectSectionTop({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +39,18 @@ class EmpowerSectionTop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 30,
-            height: 10,
-            decoration: BoxDecoration(
-              color: AppColors.bgscafold,
-              borderRadius: BorderRadius.circular(15),
-            ),
-          ),
-          Container(
             width: 10,
             height: 10,
             decoration: BoxDecoration(
               color: AppColors.grey200,
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+          Container(
+            width: 30,
+            height: 10,
+            decoration: BoxDecoration(
+              color: AppColors.bgscafold,
               borderRadius: BorderRadius.circular(15),
             ),
           ),

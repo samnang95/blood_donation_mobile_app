@@ -1,3 +1,4 @@
+import 'package:blood_donation_mobile_app/feature/connect_give/connect_page.dart';
 import 'package:blood_donation_mobile_app/feature/detail/detail_page.dart';
 import 'package:blood_donation_mobile_app/feature/edit_profile/edit_profile_page.dart';
 import 'package:blood_donation_mobile_app/feature/empower_generosity/empower_binding.dart';
@@ -13,6 +14,7 @@ import 'package:blood_donation_mobile_app/feature/splash/splash_binding.dart';
 import 'package:blood_donation_mobile_app/feature/splash/splash_page.dart';
 import 'package:get/get.dart';
 
+import '../feature/connect_give/connect_binding.dart';
 import '../feature/detail/detail_binding.dart';
 import '../feature/donation_request/donation_request_binding.dart';
 import '../feature/donation_request/donation_request_page.dart';
@@ -51,6 +53,7 @@ class AppRoutes {
   static const String empowerGenerosity = '/empower-generosity';
 
   static const String language = '/language';
+  static const String connect = '/connect';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -102,6 +105,11 @@ class AppRoutes {
       name: language,
       page: () => LanguagePage(),
       binding: LanguageBinding(),
+    ),
+    GetPage(
+      name: connect,
+      page: () => ConnectPage(),
+      binding: ConnectBinding(),
     ),
   ];
 }
