@@ -16,7 +16,7 @@ class RootApp extends StatelessWidget {
       locale: context.locale,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
-      initialRoute: AppRoutes.main,
+      initialRoute: AppRoutes.splash,
       getPages: AppRoutes.routes,
     );
   }

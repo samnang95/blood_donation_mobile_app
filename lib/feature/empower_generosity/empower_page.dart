@@ -23,7 +23,7 @@ class EmpowerPage extends GetView<EmpowerController> {
             children: [
               EmpowerSectionTop(
                 onTap: () {
-                  print("Hello");
+                  Get.toNamed('/connect');
                 },
               ),
               SvgPicture.asset(AppIcons.icNoToManSuperhero),

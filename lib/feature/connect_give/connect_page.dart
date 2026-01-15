@@ -23,7 +23,7 @@ class ConnectPage extends GetView<ConnectController> {
             children: [
               ConnectSectionTop(
                 onTap: () {
-                  print("connect tapppp");
+                  Get.toNamed('/impact');
                 },
               ),
               SvgPicture.asset(AppIcons.icBigBlood),
