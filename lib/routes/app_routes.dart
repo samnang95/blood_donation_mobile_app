@@ -94,10 +94,11 @@ class AppRoutes {
     ),
     GetPage(name: splash, page: () => SplashPage(), binding: SplashBinding()),
     GetPage(
-
       name: empowerGenerosity,
       page: () => EmpowerPage(),
       binding: EmpowerBinding(),
+    ),
+    GetPage(
       name: language,
       page: () => LanguagePage(),
       binding: LanguageBinding(),
