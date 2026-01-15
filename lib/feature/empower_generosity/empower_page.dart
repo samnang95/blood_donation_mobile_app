@@ -19,20 +19,15 @@ class EmpowerPage extends GetView<EmpowerController> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  EmpowerSectionTop(
-                    onEdit: () {
-                      print("Hello");
-                    },
-                  ),
-                  SvgPicture.asset(AppIcons.icNoToManSuperhero),
-                ],
+              EmpowerSectionTop(
+                onEdit: () {
+                  print("Hello");
+                },
               ),
-              EmpowerSectionBottom(),
-              EmpowerSectionBottom(),
+              SvgPicture.asset(AppIcons.icNoToManSuperhero),
+              Column(children: [EmpowerSectionBottom(), SizedBox(height: 30)]),
             ],
           ),
         ),

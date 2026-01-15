@@ -12,11 +12,17 @@ class EmpowerSectionTop extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _paginationSection(),
-        TextButton(
-          onPressed: onEdit,
+        InkWell(
+          onTap: () {
+            print("Skip tapped");
+          },
           child: Text(
             "Skip",
-            style: const TextStyle(color: AppColors.blue300, fontSize: 28),
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.blue300,
+            ),
           ),
         ),
       ],
@@ -35,26 +41,26 @@ class EmpowerSectionTop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 15,
-            height: 15,
+            width: 30,
+            height: 10,
+            decoration: BoxDecoration(
+              color: AppColors.bgscafold,
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+          Container(
+            width: 10,
+            height: 10,
             decoration: BoxDecoration(
               color: AppColors.grey200,
               borderRadius: BorderRadius.circular(15),
             ),
           ),
           Container(
-            width: 15,
-            height: 15,
+            width: 10,
+            height: 10,
             decoration: BoxDecoration(
-              color: AppColors.bgscafold,
-              borderRadius: BorderRadius.circular(15),
-            ),
-          ),
-          Container(
-            width: 15,
-            height: 15,
-            decoration: BoxDecoration(
-              color: AppColors.bgscafold,
+              color: AppColors.grey200,
               borderRadius: BorderRadius.circular(15),
             ),
           ),
