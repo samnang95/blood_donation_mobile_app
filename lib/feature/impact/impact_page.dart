@@ -30,7 +30,7 @@ class ImpactPage extends GetView<ImpactController> {
                 children: [
                   ImpactSectionTop(
                     onTap: () {
-                      print("impact tapppp");
+                      Get.toNamed("/language");
                     },
                   ),
                   SvgPicture.asset(AppIcons.icBigBlood),
