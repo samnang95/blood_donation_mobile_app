@@ -43,4 +43,5 @@ class AppImages {
   static const String forRegister = 'assets/images/for-register.png';
   static const String lockLogin = 'assets/images/lock_login.png';
   static const String callLogin = 'assets/images/call_login.png';
+  static const String hintPassword = 'assets/images/hint-password.png';
 }

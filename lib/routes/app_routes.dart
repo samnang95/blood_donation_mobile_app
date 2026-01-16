@@ -1,4 +1,6 @@
 import 'package:blood_donation_mobile_app/feature/auth/login/login_binding.dart';
+import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_binding.dart';
+import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_page.dart';
 import 'package:blood_donation_mobile_app/feature/connect_give/connect_page.dart';
 import 'package:blood_donation_mobile_app/feature/detail/detail_page.dart';
 import 'package:blood_donation_mobile_app/feature/edit_profile/edit_profile_page.dart';
@@ -62,6 +64,7 @@ class AppRoutes {
 
   // auth
   static const String login = '/login';
+  static const String signup = '/signup';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -121,5 +124,6 @@ class AppRoutes {
     ),
     GetPage(name: impact, page: () => ImpactPage(), binding: ImpactBinding()),
     GetPage(name: login, page: () => LoginPage(), binding: LoginBinding()),
+    GetPage(name: signup, page: () => SignupPage(), binding: SignUpBinding()),
   ];
 }
