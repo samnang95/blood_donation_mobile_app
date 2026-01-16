@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class XButtonHintText extends StatelessWidget {
   final String hintText;
   final String? prefixIcon;
+  final String? suffixIcon;
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
   final bool obscureText;
@@ -13,6 +14,7 @@ class XButtonHintText extends StatelessWidget {
     super.key,
     required this.hintText,
     this.prefixIcon,
+    this.suffixIcon,
     this.controller,
     this.onChanged,
     this.obscureText = false,
@@ -30,11 +32,17 @@ class XButtonHintText extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey[400]),
+        hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
         prefixIcon: prefixIcon != null
             ? Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Image.asset(prefixIcon!, width: 24, height: 24),
+              )
+            : null,
+        suffixIcon: suffixIcon != null
+            ? Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Image.asset(suffixIcon!, width: 24, height: 24),
               )
             : null,
         border: OutlineInputBorder(
