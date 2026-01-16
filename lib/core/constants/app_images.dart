@@ -44,4 +44,6 @@ class AppImages {
   static const String lockLogin = 'assets/images/lock_login.png';
   static const String callLogin = 'assets/images/call_login.png';
   static const String hintPassword = 'assets/images/hint-password.png';
+  static const String otp = 'assets/images/otp.png';
+  static const String otpSuccess = 'assets/images/otp-success.png';
 }

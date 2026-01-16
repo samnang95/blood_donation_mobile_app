@@ -1,4 +1,5 @@
 import 'package:blood_donation_mobile_app/feature/auth/login/login_binding.dart';
+import 'package:blood_donation_mobile_app/feature/auth/otp/otp_binding.dart';
 import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_binding.dart';
 import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_page.dart';
 import 'package:blood_donation_mobile_app/feature/connect_give/connect_page.dart';
@@ -20,6 +21,7 @@ import 'package:blood_donation_mobile_app/feature/splash/splash_page.dart';
 import 'package:get/get.dart';
 
 import '../feature/auth/login/login_page.dart';
+import '../feature/auth/otp/otp_page.dart';
 import '../feature/connect_give/connect_binding.dart';
 import '../feature/detail/detail_binding.dart';
 import '../feature/donation_request/donation_request_binding.dart';
@@ -65,6 +67,7 @@ class AppRoutes {
   // auth
   static const String login = '/login';
   static const String signup = '/signup';
+  static const String otp = '/otp';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -125,5 +128,6 @@ class AppRoutes {
     GetPage(name: impact, page: () => ImpactPage(), binding: ImpactBinding()),
     GetPage(name: login, page: () => LoginPage(), binding: LoginBinding()),
     GetPage(name: signup, page: () => SignupPage(), binding: SignUpBinding()),
+    GetPage(name: otp, page: () => OtpPage(), binding: OtpBinding()),
   ];
 }
