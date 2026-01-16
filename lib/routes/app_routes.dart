@@ -20,6 +20,8 @@ import 'package:blood_donation_mobile_app/feature/splash/splash_binding.dart';
 import 'package:blood_donation_mobile_app/feature/splash/splash_page.dart';
 import 'package:get/get.dart';
 
+import '../feature/auth/forgot_password/forgot_password_binding.dart';
+import '../feature/auth/forgot_password/forgot_password_page.dart';
 import '../feature/auth/login/login_page.dart';
 import '../feature/auth/otp/otp_page.dart';
 import '../feature/connect_give/connect_binding.dart';
@@ -68,6 +70,7 @@ class AppRoutes {
   static const String login = '/login';
   static const String signup = '/signup';
   static const String otp = '/otp';
+  static const String forgotPassword = '/forgot-password';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -129,5 +132,10 @@ class AppRoutes {
     GetPage(name: login, page: () => LoginPage(), binding: LoginBinding()),
     GetPage(name: signup, page: () => SignupPage(), binding: SignUpBinding()),
     GetPage(name: otp, page: () => OtpPage(), binding: OtpBinding()),
+    GetPage(
+      name: forgotPassword,
+      page: () => ForgotPasswordPage(),
+      binding: ForgotPasswordBinding(),
+    ),
   ];
 }

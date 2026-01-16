@@ -46,4 +46,6 @@ class AppImages {
   static const String hintPassword = 'assets/images/hint-password.png';
   static const String otp = 'assets/images/otp.png';
   static const String otpSuccess = 'assets/images/otp-success.png';
+  static const String forgotLock = 'assets/images/forgot-lock.png';
+  static const String forgotCall = 'assets/images/forgot-call.png';
 }
