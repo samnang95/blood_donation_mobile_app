@@ -39,4 +39,8 @@ class AppImages {
   static const String khmer = 'assets/images/khmer.png';
   static const String usa = 'assets/images/usa.png';
   static const String chinese = 'assets/images/chinese.png';
+  static const String forLogin = 'assets/images/for-login.png';
+  static const String forRegister = 'assets/images/for-register.png';
+  static const String lockLogin = 'assets/images/lock_login.png';
+  static const String callLogin = 'assets/images/call_login.png';
 }
