@@ -2,6 +2,8 @@ import 'package:blood_donation_mobile_app/feature/auth/login/login_binding.dart'
 import 'package:blood_donation_mobile_app/feature/auth/otp/otp_binding.dart';
 import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_binding.dart';
 import 'package:blood_donation_mobile_app/feature/auth/sign_up/signup_page.dart';
+import 'package:blood_donation_mobile_app/feature/auth/verification/verification_binding.dart';
+import 'package:blood_donation_mobile_app/feature/auth/verification/verification_page.dart';
 import 'package:blood_donation_mobile_app/feature/connect_give/connect_page.dart';
 import 'package:blood_donation_mobile_app/feature/detail/detail_page.dart';
 import 'package:blood_donation_mobile_app/feature/edit_profile/edit_profile_page.dart';
@@ -71,6 +73,7 @@ class AppRoutes {
   static const String signup = '/signup';
   static const String otp = '/otp';
   static const String forgotPassword = '/forgot-password';
+  static const String verification = '/verification';
   static final routes = [
     GetPage(name: main, page: () => const MainPage(), binding: MainBinding()),
     GetPage(name: home, page: () => HomePage(), binding: HomeBinding()),
@@ -136,6 +139,11 @@ class AppRoutes {
       name: forgotPassword,
       page: () => ForgotPasswordPage(),
       binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: verification,
+      page: () => VerificationPage(),
+      binding: VerificationBinding(),
     ),
   ];
 }
