@@ -62,7 +62,7 @@ class _OtpVerifyState extends State<OtpVerify> {
               keyboardType: TextInputType.number,
               maxLength: 1,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               decoration: InputDecoration(
                 counterText: '',
                 border: InputBorder.none,

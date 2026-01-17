@@ -73,7 +73,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
                 child: XButton(
                   text: "Continue",
                   onPressed: () {
-                    print("Continue to OTP Verification");
+                    Get.toNamed('/verification');
                   },
                 ),
               ),

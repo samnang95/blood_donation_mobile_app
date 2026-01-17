@@ -21,7 +21,12 @@ class LanguagePage extends GetView<LanguageController> {
             children: [
               SvgPicture.asset(AppIcons.icLanguageBig),
               Column(children: [LanguageList(), SizedBox(height: 200)]),
-              XButton(text: "Confirm", onPressed: () {}),
+              XButton(
+                text: "Confirm",
+                onPressed: () {
+                  Get.toNamed('login');
+                },
+              ),
             ],
           ),
         ),

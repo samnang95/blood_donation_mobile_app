@@ -55,7 +55,14 @@ class SignupPage extends GetView<SignUpController> {
             key: controller.formKey,
             child: Column(
               children: [
-                LoginTabBar(),
+                LoginTabBar(
+                  currentIndex: 1,
+                  onTabChanged: (index) {
+                    if (index == 0) {
+                      Get.toNamed('/login');
+                    }
+                  },
+                ),
                 const SizedBox(height: 16),
 
                 XButtonHintText(

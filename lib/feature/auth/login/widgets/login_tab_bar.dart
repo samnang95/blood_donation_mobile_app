@@ -1,15 +1,11 @@
 import 'package:blood_donation_mobile_app/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class LoginTabBar extends StatefulWidget {
-  const LoginTabBar({super.key});
+class LoginTabBar extends StatelessWidget {
+  final int currentIndex;
+  final Function(int)? onTabChanged; // Added callback for tab changes
 
-  @override
-  State<LoginTabBar> createState() => _LoginTabBarState();
-}
-
-class _LoginTabBarState extends State<LoginTabBar> {
-  int selectedIndex = 0;
+  const LoginTabBar({super.key, required this.currentIndex, this.onTabChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +23,15 @@ class _LoginTabBarState extends State<LoginTabBar> {
             children: [
               Expanded(
                 child: InkWell(
-                  onTap: () => setState(() => selectedIndex = 0),
+                  onTap: () {
+                    onTabChanged?.call(0); // Notify parent
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(left: 4),
                     child: Container(
                       height: 40,
                       decoration: BoxDecoration(
-                        color: selectedIndex == 0
+                        color: currentIndex == 0
                             ? AppColors.backgroundColor
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(8),
@@ -42,7 +40,7 @@ class _LoginTabBarState extends State<LoginTabBar> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            color: selectedIndex == 0
+                            color: currentIndex == 0
                                 ? Colors.blue[400]
                                 : Colors.grey[700],
                             fontWeight: FontWeight.w600,
@@ -56,13 +54,15 @@ class _LoginTabBarState extends State<LoginTabBar> {
               SizedBox(width: 5),
               Expanded(
                 child: InkWell(
-                  onTap: () => setState(() => selectedIndex = 1),
+                  onTap: () {
+                    onTabChanged?.call(1); // Notify parent
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 4),
                     child: Container(
                       height: 40,
                       decoration: BoxDecoration(
-                        color: selectedIndex == 1
+                        color: currentIndex == 1
                             ? AppColors.backgroundColor
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(8),
@@ -71,7 +71,7 @@ class _LoginTabBarState extends State<LoginTabBar> {
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
-                            color: selectedIndex == 1
+                            color: currentIndex == 1
                                 ? Colors.blue[400]
                                 : Colors.grey[700],
                             fontWeight: FontWeight.w600,
